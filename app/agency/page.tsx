@@ -38,7 +38,7 @@ export default function AgencyPage() {
   useEffect(() => { setTimeout(() => setMounted(true), 50); }, []);
 
   return (
-    <div className="bg-[#0A0A0A] min-h-screen text-white relative" style={{ fontFamily: "var(--font-sans), sans-serif" }}>
+    <div className="bg-[#0A0A0A] min-h-screen text-white relative" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
       {/* Ambient purple glow - full page */}
       <div
         className="fixed pointer-events-none"
@@ -87,7 +87,7 @@ export default function AgencyPage() {
             <p className="text-[#777] text-xs tracking-[0.35em] mb-8">JABA FOR AGENCIES</p>
             <h1
               className="text-white leading-none mb-8"
-              style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(3.5rem, 8vw, 7.5rem)" }}
+              style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(3.5rem, 8vw, 7.5rem)" }}
             >
               AI THAT PROJECT<br />
               MANAGES ATHLETES<br />
@@ -110,7 +110,7 @@ export default function AgencyPage() {
               <div className="flex-1">
                 <h2
                   className="text-white leading-none mb-6"
-                  style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+                  style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
                 >
                   AI BUILT FOR THE<br />
                   PEOPLE WHO WORK<br />
@@ -148,7 +148,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">OPERATIONS</p>
-            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               EVERY TASK.<br />EVERY DEADLINE.<br />ONE PLACE.
             </h2>
             <p className="text-[#999] max-w-xl mb-10">
@@ -194,7 +194,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">DEAL MANAGEMENT</p>
-            <h2 className="text-white leading-none mb-12" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-12" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               FROM DRAFT TO DONE -<br />END TO END.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#222]">
@@ -232,7 +232,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">TALENT MANAGEMENT</p>
-            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               KNOW YOUR ENTIRE<br />ROSTER - AT A GLANCE.
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-[#222] mb-4">
@@ -251,7 +251,7 @@ export default function AgencyPage() {
                   <div className="text-white font-semibold text-sm mb-1">{a.name}</div>
                   <div className="text-[#888] text-xs mb-4">{a.sport}</div>
                   <div className="text-[#999] text-xs tracking-[0.1em] mb-1">MARKETABILITY</div>
-                  <div className="text-[#CAFF00] text-lg font-bold mb-3" style={{ fontFamily: "var(--font-display), sans-serif" }}>{a.score}</div>
+                  <div className="text-[#CAFF00] text-lg font-bold mb-3" style={{ fontFamily: "var(--font-bebas), sans-serif" }}>{a.score}</div>
                   <div className="text-[#999] text-xs tracking-[0.1em] mb-1">FOLLOWERS</div>
                   <div className="text-[#999] text-sm mb-3">{a.followers} followers</div>
                   <div className="text-[#999] text-xs tracking-[0.1em] mb-1">ER</div>
@@ -271,7 +271,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">AI-POWERED MATCHING</p>
-            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               JABA FINDS THE BRANDS.<br />YOU CLOSE THE DEAL.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#222] mb-4">
@@ -302,7 +302,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">BUSINESS DEVELOPMENT</p>
-            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               FIND THE RIGHT CONTACT.<br />EVERY TIME.
             </h2>
             <p className="text-[#999] max-w-xl mb-10">
@@ -328,7 +328,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">AI TOOLS</p>
-            <h2 className="text-white leading-none mb-12" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-12" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               DECKS. REPORTS.<br />MEDIA KITS. IN SECONDS.
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-[#222]">
@@ -355,7 +355,7 @@ export default function AgencyPage() {
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#777] text-xs tracking-[0.3em] mb-4">CONTENT INTELLIGENCE</p>
-            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-display), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+            <h2 className="text-white leading-none mb-8" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
               OUR AI WATCHES<br />300,000+ PIECES<br />OF CONTENT.<br />
               <span className="text-[#CAFF00]">SO YOU DON'T HAVE TO.</span>
             </h2>
@@ -399,7 +399,7 @@ export default function AgencyPage() {
                     { topic: "PRACTICE", count: "212" },
                   ].map((t, i) => (
                     <div key={t.topic} className={`p-4 ${i % 2 === 0 ? "border-r border-[#222]" : ""} ${i < 6 ? "border-b border-[#222]" : ""}`}>
-                      <div className="text-[#CAFF00] text-sm font-bold mb-0.5" style={{ fontFamily: "var(--font-display), sans-serif" }}>{t.count}</div>
+                      <div className="text-[#CAFF00] text-sm font-bold mb-0.5" style={{ fontFamily: "var(--font-bebas), sans-serif" }}>{t.count}</div>
                       <div className="text-[#888] text-xs tracking-[0.1em]">{t.topic}</div>
                     </div>
                   ))}
