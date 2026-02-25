@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -72,31 +73,70 @@ export default function AgencyPage() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#1a1a1a] px-8 py-4 flex items-center justify-between">
-        <img src="/jaba-wordmark.png" alt="JABA logo" className="h-14 w-auto" />
+        <Image src="/jaba-wordmark.png" alt="JABA" width={80} height={28} className="object-contain" />
         <span className="text-xs tracking-[0.2em] border border-[#333] px-3 py-1 text-[#999]">FOR AGENCIES</span>
       </nav>
 
       {/* HERO */}
-      <section className="pt-40 pb-32 px-8 border-b border-[#1a1a1a]">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative pt-40 pb-32 px-8 border-b border-[#1a1a1a] overflow-hidden">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/header-bg-without-balls.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.30,
+          }}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-40 z-[1] pointer-events-none bg-gradient-to-b from-transparent to-[#0A0A0A]" />
+        <div className="absolute inset-0 z-[1] pointer-events-none">
+          <div
+            className="absolute -top-[8vh] -left-[8vw] w-[65vw] h-[65vh] rounded-full"
+            style={{
+              background: "radial-gradient(circle, rgba(110, 30, 195, 0.18) 0%, transparent 65%)",
+              filter: "blur(70px)",
+            }}
+          />
+          <div
+            className="absolute -bottom-[10vh] -right-[10vw] w-[55vw] h-[55vh] rounded-full"
+            style={{
+              background: "radial-gradient(circle, rgba(80, 15, 160, 0.14) 0%, transparent 65%)",
+              filter: "blur(90px)",
+            }}
+          />
+        </div>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-[#777] text-xs tracking-[0.35em] mb-8">JABA FOR AGENCIES</p>
+            <p className="text-[#C8F135] text-base md:text-lg font-bold tracking-[0.2em] uppercase mb-6">
+              THIS IS JABA.
+            </p>
             <h1
               className="text-white leading-none mb-8"
               style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(3.5rem, 8vw, 7.5rem)" }}
             >
-              AI THAT PROJECT<br />
-              MANAGES ATHLETES<br />
-              <span className="text-[#CAFF00]">AND THEIR DELIVERABLES.</span>
+              AI BUILT FOR<br />
+              ATHLETE AGENCIES.
             </h1>
-            <p className="text-[#999] text-lg max-w-xl mx-auto">
-              JABA coordinates contracts, campaigns, timelines, and execution across athletes and brands so nothing slips and nothing gets missed.
+            <p className="text-white text-2xl md:text-3xl font-normal max-w-3xl mx-auto mt-4">
+              Pitch brands and project manage deliverables.
+            </p>
+            <p className="text-white/60 text-base max-w-2xl mx-auto mt-2 leading-relaxed">
+              JABA handles the manual work so you never have to set a reminder, look up a contact, or chase a deliverable again.
             </p>
           </motion.div>
+        </div>
+        <div className="absolute bottom-0 right-28 hidden lg:block pointer-events-none z-20">
+          <Image
+            src="/JABA_armscrossed.png"
+            alt="JABA"
+            width={320}
+            height={608}
+            className="object-contain"
+          />
         </div>
       </section>
 
@@ -104,10 +144,10 @@ export default function AgencyPage() {
       <section className="py-20 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
-            <p className="text-[#777] text-xs tracking-[0.3em] mb-4">SEE IT IN ACTION</p>
-            <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="flex flex-col lg:flex-row gap-12 items-start">
               {/* Left - copy */}
               <div className="flex-1">
+                <p className="text-xs tracking-widest text-zinc-500 uppercase mb-4">SEE IT IN ACTION</p>
                 <h2
                   className="text-white leading-none mb-6"
                   style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
@@ -117,11 +157,11 @@ export default function AgencyPage() {
                   WITH ATHLETES.
                 </h2>
                 <p className="text-[#999] text-base leading-relaxed max-w-sm">
-                  JABA was built from the ground up for schools, agencies and brands managing NIL at scale. This is what that looks like.
+                  JABA handles the manual work so you don't have to. Contacts, campaigns, deliverables, pitches, follow-ups. Every step of the process, in one place. This is what that looks like.
                 </p>
               </div>
               {/* Right - vertical video player */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-full lg:w-auto flex justify-start lg:justify-end">
                 <div
                   className="border border-[#222] overflow-hidden"
                   style={{ width: "315px", height: "560px" }}
@@ -146,16 +186,21 @@ export default function AgencyPage() {
       {/* BRAND DEALS */}
       <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">01 — BRAND DEALS</p>
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">01 - BRAND DEALS</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
             <h2 className="text-white leading-none" style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
               FIND THE RIGHT CONTACT.<br />
               CLOSE THE RIGHT DEAL.<br />
               <span style={{ color: '#CAFF00' }}>EVERY TIME.</span>
             </h2>
-            <p className="text-white/50 text-base leading-relaxed pt-4">
-              JABA gives sales teams a structured brand deal pipeline - whether they are already running outbound tools or just getting started. Find verified contacts, see every brand already spending on athletes, and pitch with AI-generated media kits built around audience overlap.
-            </p>
+            <div className="text-white/50 text-base leading-relaxed pt-4">
+              <p className="mb-4">
+                Database of over 300,000 brands. Focused on athlete brand deals, not corporate sponsorships. JABA has the contact info and deal history of every brand that has ever worked with an athlete.
+              </p>
+              <p className="mb-4">
+                Our AI generates the media kit and crafts the pitch showing the brand exactly how they can work with your athletes.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -169,7 +214,7 @@ export default function AgencyPage() {
               {
                 icon: '⊞',
                 title: 'Brand Deal Database',
-                desc: 'Every brand that has activated an athlete deal, with overlap scoring against your roster. View deal history, athlete count, EMV, and category before you reach out.',
+                desc: 'Over 300,000 brands that have activated athlete deals. Contact info, deal history, EMV, and category filters included. See who fits before you reach out.',
                 detail: 'DEAL HISTORY · ATHLETE OVERLAP · CATEGORY FILTERS'
               },
               {
@@ -179,11 +224,64 @@ export default function AgencyPage() {
                 detail: 'AUTO-GENERATED · LIVE DATA · BRAND-SPECIFIC'
               },
             ].map((card, i) => (
-              <div key={i} className="border border-white/10 p-6 rounded-sm bg-[#111111] hover:border-white/20 transition-colors">
+              <div key={i} className="flex flex-col h-full border border-white/10 p-6 rounded-sm bg-[#111111] hover:border-white/20 transition-colors">
                 <span className="text-2xl mb-4 block">{card.icon}</span>
                 <p className="text-white font-medium text-sm mb-2">{card.title}</p>
                 <p className="text-white/40 text-xs leading-relaxed mb-4">{card.desc}</p>
-                <p className="text-[10px] tracking-[0.15em] text-white/20">{card.detail}</p>
+                {i === 0 && (
+                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 overflow-hidden">
+                    <div className="px-3 py-2 border-b border-white/10 text-[9px] tracking-[0.15em] text-white/30">CONTACT SEARCH RESULTS</div>
+                    {[
+                      { name: 'Sarah Chen', title: 'Head of Partnerships', company: 'Nike', verified: true },
+                      { name: 'Luis Ortega', title: 'Sponsorship Director', company: 'Gatorade', verified: true },
+                      { name: 'Maya Johnson', title: 'Brand Manager', company: 'Adidas', verified: false }
+                    ].map((row, idx) => (
+                      <div key={row.name} className={`px-3 py-2 ${idx < 2 ? 'border-b border-white/5' : ''}`}>
+                        <div className="flex items-center justify-between">
+                          <p className="text-white/80 text-xs">{row.name}</p>
+                          <span className="text-[10px] text-[#0A66C2]">in</span>
+                        </div>
+                        <p className="text-white/35 text-[10px]">{row.title} · {row.company} {row.verified ? '• Verified' : ''}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {i === 1 && (
+                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 overflow-hidden">
+                    <div className="grid grid-cols-[1.6fr_1fr_1fr] px-3 py-2 border-b border-white/10 text-[9px] tracking-[0.15em] text-white/30">
+                      <span>BRAND</span>
+                      <span>DEALS</span>
+                      <span>OVERLAP</span>
+                    </div>
+                    {[
+                      { brand: 'Nike', deals: '42', overlap: '87%', active: true },
+                      { brand: 'Gatorade', deals: '19', overlap: '73%', active: false },
+                      { brand: 'Adidas', deals: '24', overlap: '68%', active: false },
+                    ].map((row, idx) => (
+                      <div key={row.brand} className={`grid grid-cols-[1.6fr_1fr_1fr] px-3 py-2 ${idx < 2 ? 'border-b border-white/5' : ''} ${row.active ? 'bg-[#CAFF00]/10' : ''}`}>
+                        <span className="text-white/80 text-xs">{row.brand}</span>
+                        <span className="text-white/45 text-xs">{row.deals}</span>
+                        <span className={`${row.active ? 'text-[#CAFF00]' : 'text-white/45'} text-xs`}>{row.overlap} match</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {i === 2 && (
+                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-white/80 text-xs">Jeremiah Smith</p>
+                      <span className="text-[9px] tracking-widest border border-white/10 px-1.5 py-0.5 text-white/40">FOOTWEAR</span>
+                    </div>
+                    <p className="text-white/40 text-[10px] mb-2">AUDIENCE OVERLAP</p>
+                    <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mb-1">
+                      <div className="h-full bg-[#CAFF00]" style={{ width: '34%' }} />
+                    </div>
+                    <p className="text-[#CAFF00] text-[10px]">34% overlap with brand target</p>
+                  </div>
+                )}
+                <div className="mt-auto pt-4">
+                  <p className="text-[10px] tracking-[0.15em] text-white/20">{card.detail}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -214,42 +312,63 @@ export default function AgencyPage() {
       {/* ATHLETE MANAGEMENT */}
       <section className="py-24 px-8 border-b border-[#1a1a1a] bg-[#0D0D0D]">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">02 — ATHLETE MANAGEMENT</p>
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">02 - ATHLETE MANAGEMENT</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
             <h2 className="text-white leading-none" style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
               OFF THE SPREADSHEET.<br />
-              OUT OF YOUR INBOX.<br />
               <span style={{ color: '#CAFF00' }}>INTO ONE SYSTEM.</span>
             </h2>
-            <p className="text-white/50 text-base leading-relaxed">
-              If you're not in sales, you're managing - and right now that probably means Asana, Notion, Monday, or a spreadsheet. JABA replaces all of it. Calendars, contracts, deliverables, and campaign execution in one place - with an AI assistant that monitors everything so you don't have to.
-            </p>
+            <div>
+              <p className="text-white text-xl font-semibold mb-2">One click contract extraction.</p>
+              <p className="text-base text-zinc-400 mb-6 leading-relaxed">
+                Never send a follow-up or check on the status of a deliverable again. JABA handles each step of the campaign management process.
+              </p>
+              <ul className="space-y-2 mt-4">
+                <li className="text-sm text-zinc-400"><span className="text-[#C8F135]">✦</span> Upload a contract. JABA extracts every deliverable automatically.</li>
+                <li className="text-sm text-zinc-400"><span className="text-[#C8F135]">✦</span> Campaigns build themselves. Athletes get notified. Deadlines get tracked.</li>
+                <li className="text-sm text-zinc-400"><span className="text-[#C8F135]">✦</span> Your full roster. Marketability, followers, ER and more - all in one place.</li>
+              </ul>
+            </div>
           </div>
 
-          {/* Workflow Table */}
-          <div className="border border-white/10 rounded-sm overflow-hidden mb-6">
-            <div className="grid grid-cols-5 text-[10px] tracking-[0.15em] text-white/30 border-b border-white/10 px-6 py-3 bg-white/5">
-              <span>DATE</span>
-              <span>TASK</span>
-              <span>CAMPAIGN</span>
-              <span>ATHLETE</span>
-              <span>STATUS</span>
-            </div>
-            {[
-              { date: 'Oct 20 · 2:00 PM', task: 'Instagram Story - Training Day', campaign: 'FALL CAMPAIGN', athlete: 'Marcus Webb', status: '● OVERDUE', statusColor: '#ff4444' },
-              { date: 'Oct 22 · 10:30 AM', task: 'YouTube - Game Day Vlog', campaign: 'SOCIAL MEDIA Q4', athlete: 'Dani Torres', status: '✓ COMPLETED', statusColor: '#CAFF00' },
-              { date: 'Oct 25 · 12:00 PM', task: 'TikTok - Product Feature', campaign: 'BRAND A COLLAB', athlete: 'Jordan Ellis', status: '◎ PENDING', statusColor: 'rgba(255,255,255,0.4)' },
-              { date: 'Oct 28 · 3:00 PM', task: 'Photo Shoot - Lifestyle', campaign: 'FALL CAMPAIGN', athlete: 'Aaliyah Reeves', status: '◎ SCHEDULED', statusColor: 'rgba(255,255,255,0.4)' },
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-5 px-6 py-4 border-b border-white/5 hover:bg-white/5 transition-colors items-center">
-                <span className="text-white/30 text-xs">{row.date}</span>
-                <span className="text-white text-sm">{row.task}</span>
-                <span className="text-white/40 text-xs">{row.campaign}</span>
-                <span className="text-white/60 text-sm">{row.athlete}</span>
-                <span className="text-xs font-medium" style={{ color: row.statusColor }}>{row.status}</span>
+          {/* Contract-to-campaign flow */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-stretch mb-3">
+            <div className="border border-white/10 rounded-sm bg-[#111111] p-5">
+              <div className="text-2xl mb-4">⤴</div>
+              <p className="text-[10px] tracking-[0.18em] text-white/35 mb-2">UPLOAD CONTRACT</p>
+              <p className="text-white/80 text-sm mb-3">Nike_Partnership_Marcus_Webb.pdf</p>
+              <span className="inline-block text-[10px] tracking-widest border border-[#CAFF00]/30 text-[#CAFF00] px-2 py-1 mb-4">
+                AI PARSING...
+              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-[9px] tracking-widest border border-white/10 text-white/45 px-2 py-1">5 DELIVERABLES</span>
+                <span className="text-[9px] tracking-widest border border-white/10 text-white/45 px-2 py-1">90-DAY CAMPAIGN</span>
+                <span className="text-[9px] tracking-widest border border-white/10 text-white/45 px-2 py-1">$12,500 VALUE</span>
               </div>
-            ))}
+            </div>
+
+            <div className="hidden md:flex items-center justify-center text-white/25 text-2xl px-2">→</div>
+
+            <div className="border border-white/10 rounded-sm bg-[#111111] p-5">
+              <span className="inline-block text-[10px] tracking-widest text-[#CAFF00] mb-3">● RUNNING</span>
+              <p className="text-white font-medium mb-4" style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: '1.3rem' }}>
+                NIKE FALL ACTIVATION
+              </p>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-[10px] text-white/50">MW</div>
+                <p className="text-white/70 text-xs">Marcus Webb · Football</p>
+              </div>
+              <p className="text-white/40 text-xs mb-2">Next deliverable</p>
+              <p className="text-white/75 text-sm mb-4">Instagram Story · Due Oct 20</p>
+              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mb-2">
+                <div className="h-full bg-[#CAFF00]" style={{ width: '30%' }} />
+              </div>
+              <p className="text-white/30 text-[10px] tracking-widest">5 TASKS REMAINING</p>
+            </div>
           </div>
+          <p className="text-[10px] tracking-[0.18em] text-white/30 mb-6">
+            CONTRACT UPLOADED · DELIVERABLES AUTO-POPULATED · CAMPAIGN LIVE
+          </p>
 
           {/* Deal Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
@@ -274,10 +393,38 @@ export default function AgencyPage() {
           {/* Roster strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: 'Marcus Webb', sport: 'Football', img: '/football_player.png', followers: '1.2M', er: '41.4%', score: 96 },
-              { name: 'Dani Torres', sport: "Women's Basketball", img: '/WBB_player.png', followers: '674K', er: '34.4%', score: 92 },
-              { name: 'Jordan Ellis', sport: "Men's Basketball", img: '/MBB_player.png', followers: '812K', er: '16.3%', score: 88 },
-              { name: 'Aaliyah Reeves', sport: "Women's Volleyball", img: '/Volleyball_player.png', followers: '651K', er: '36.9%', score: 94 },
+              {
+                name: 'Jeremiah Smith',
+                sport: 'Football - Ohio State',
+                img: 'https://storage.googleapis.com/jaba-profile-pictures-bucket-prod/profile-pictures/1761388500294-Jeremiah_Smith_68fca493b06066e3308741b3.png',
+                followers: '1.2M',
+                er: '5.5%',
+                score: 88
+              },
+              {
+                name: 'Harper Murray',
+                sport: "Women's Volleyball - Nebraska",
+                img: 'https://storage.googleapis.com/jaba-profile-pictures-bucket-prod/profile-pictures/1761639243543-Harper_Murray_69007414fcbc1b2ed99d5af6.png',
+                followers: '674K',
+                er: '18.1%',
+                score: 79
+              },
+              {
+                name: 'Stephen Curry',
+                sport: "Men's Basketball - Golden State Warriors",
+                img: 'https://storage.googleapis.com/jaba-profile-pictures-bucket-prod/profile-pictures/1766091466807-Stephen_Curry_68d68ebb241bc2b5a24a3c35_ProfilePicture.jpg',
+                followers: '812K',
+                er: '0.5%',
+                score: 94
+              },
+              {
+                name: 'Caitlin Clark',
+                sport: "Women's Basketball - Indiana Fever",
+                img: 'https://storage.googleapis.com/jaba-profile-pictures-bucket-prod/profile-pictures/1765485546460-Caitlin_Clark_693b2b9551f8cd3ab395260d_ProfilePicture.jpg',
+                followers: '651K',
+                er: '4.5%',
+                score: 93
+              },
             ].map((a, i) => (
               <div key={i} className="border border-white/10 rounded-sm bg-[#111111] overflow-hidden">
                 <img src={a.img} alt={a.name} className="w-full h-64 object-cover object-top" />
@@ -300,15 +447,14 @@ export default function AgencyPage() {
       {/* ANALYTICS */}
       <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">03 — CONTENT INTELLIGENCE</p>
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">03 - PERFORMANCE</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
             <h2 className="text-white leading-none" style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
-              300,000+ POSTS.<br />
-              ANALYZED.<br />
+              1M+ POSTS ANALYZED.<br />
               <span style={{ color: '#CAFF00' }}>SO YOU KNOW WHAT WORKS.</span>
             </h2>
             <p className="text-white/50 text-base leading-relaxed pt-4">
-              JABA watches every post - sponsored and organic - and surfaces what&apos;s actually working: formats, timing, hooks. Share reports directly with brands. Generate a data-backed content strategy in seconds.
+              JABA watches every post, sponsored and organic, and surfaces what&apos;s actually working: formats, timing, hooks. Save time, share reports directly with brands, and walk into every meeting looking like a content expert. Generate a data-backed content strategy in seconds, for campaigns, for athletes, and for recruits you&apos;re looking to sign.
             </p>
           </div>
 
@@ -347,7 +493,7 @@ export default function AgencyPage() {
           </div>
 
           {/* Topic tiles */}
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-3 mt-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mt-8">
             {[['3,508','GAME DAY'],['2,272','LIFESTYLE'],['1,162','FASHION'],['3,571','TEAM'],['1,350','FAMILY'],['481','FITNESS'],['522','MOTIVATION'],['212','PRACTICE']].map(([count, topic], i) => (
               <div key={i} className="border border-white/10 p-3 text-center rounded-sm hover:border-[#CAFF00]/30 transition-colors">
                 <p className="text-[#CAFF00]" style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: '1.25rem' }}>{count}</p>
@@ -382,9 +528,9 @@ export default function AgencyPage() {
       {/* YOUR ASSISTANT */}
       <section className="py-24 px-8 border-b border-[#1a1a1a] bg-[#0D0D0D]">
         <div className="max-w-6xl mx-auto">
-          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">04 — YOUR ASSISTANT</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            <div>
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">04 - YOUR ASSISTANT</p>
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="w-full lg:w-1/2">
               <h2 className="text-white leading-none mb-6" style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
                 IT TEXTS YOU<br />
                 WHEN SOMETHING<br />
@@ -396,7 +542,7 @@ export default function AgencyPage() {
               <div className="space-y-3">
                 {[
                   'Texts you automatically when a deliverable is overdue or at risk',
-                  'Sends reminders to athletes before deadlines — without you asking',
+                  'Sends reminders to athletes before deadlines, without you asking',
                   'Drafts follow-up emails to brand contacts when timelines slip',
                   'Alerts you when a campaign goes off track or a QC issue is flagged',
                 ].map((item, i) => (
@@ -409,10 +555,10 @@ export default function AgencyPage() {
             </div>
 
             {/* iMessage mock */}
-            <div className="border border-white/10 rounded-3xl overflow-hidden bg-[#0b0b0b] max-w-sm ml-auto w-full">
+            <div className="border border-white/10 rounded-3xl overflow-hidden bg-[#0b0b0b] w-full lg:w-1/2 lg:max-w-sm lg:ml-auto">
               <div className="border-b border-white/10 px-4 py-3 flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-2">
-                  <img src="/jaba-face.png" alt="JABA contact" className="w-8 h-8 object-contain" />
+                  <img src="/jaba-face.png" alt="JABA contact" className="w-10 h-10 object-contain" />
                 </div>
                 <p className="text-white text-sm font-medium">JABA</p>
               </div>
