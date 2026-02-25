@@ -91,7 +91,7 @@ export default function AgencyPage() {
             >
               AI THAT PROJECT<br />
               MANAGES ATHLETES<br />
-              <span className="text-[#CAFF00]">AND THEIR<br />DELIVERABLES.</span>
+              <span className="text-[#CAFF00]">AND THEIR DELIVERABLES.</span>
             </h1>
             <p className="text-[#999] text-lg max-w-xl mx-auto">
               JABA coordinates contracts, campaigns, timelines, and execution across athletes and brands so nothing slips and nothing gets missed.
