@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,11 +33,38 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 }
 
 export default function BrandPage() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setTimeout(() => setMounted(true), 50); }, []);
-
   return (
-    <div className="bg-[#0A0A0A] min-h-screen text-white" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+    <div className="bg-[#0A0A0A] min-h-screen text-white relative" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
+      {/* Ambient purple glow - full page */}
+      <div
+        className="fixed pointer-events-none"
+        style={{
+          top: "-10vh",
+          left: "-10vw",
+          width: "70vw",
+          height: "70vh",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(110, 30, 195, 0.18) 0%, transparent 65%)",
+          filter: "blur(80px)",
+          zIndex: 0,
+        }}
+      />
+      <div
+        className="fixed pointer-events-none"
+        style={{
+          bottom: "-10vh",
+          right: "-10vw",
+          width: "60vw",
+          height: "60vh",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(80, 15, 160, 0.14) 0%, transparent 65%)",
+          filter: "blur(100px)",
+          zIndex: 0,
+        }}
+      />
+
+      {/* All page content needs z-index above the glow */}
+      <div className="relative" style={{ zIndex: 1 }}>
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] border-b border-[#1a1a1a] px-8 py-4 flex items-center justify-between">
@@ -47,89 +73,101 @@ export default function BrandPage() {
       </nav>
 
       {/* HERO */}
-      <section className="bg-[#0A0A0A] pt-32 pb-24 px-8 border-b border-[#1a1a1a]">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
+      <section className="pt-40 pb-32 px-8 border-b border-[#1a1a1a] text-center">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-6 uppercase">JABA FOR BRANDS</p>
+          <h1
+            className="text-white leading-none mb-8"
+            style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(3.5rem, 8vw, 7.5rem)' }}
           >
-            <p className="text-[#aaa] text-xs tracking-[0.3em] mb-6">JABA FOR BRANDS</p>
-            <h1
-              className="text-white leading-none mb-8"
-              style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(3.5rem, 8vw, 7rem)" }}
-            >
-              EVERYTHING<br />
-              YOU NEED TO<br />
-              KNOW ABOUT<br />
-              <span className="text-[#CAFF00]">YOUR ATHLETES.</span>
-            </h1>
-            <p className="text-[#999] text-base max-w-xl mb-12">
-              You met with JABA. Here's exactly what we do - from the first post to the final report.
-            </p>
-            <div className="grid grid-cols-3 gap-0 border border-[#222] max-w-2xl">
-              <div className="px-8 py-6 border-r border-[#222]">
-                <div className="text-[#CAFF00] text-3xl font-bold mb-1" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "2.2rem" }}>808.6M+</div>
-                <div className="text-[#999] text-xs tracking-[0.15em]">TOTAL SOCIAL REACH</div>
-              </div>
-              <div className="px-8 py-6 border-r border-[#222]">
-                <div className="text-[#CAFF00] text-3xl font-bold mb-1" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "2.2rem" }}>60.9M</div>
-                <div className="text-[#999] text-xs tracking-[0.15em]">TOTAL ENGAGEMENT</div>
-              </div>
-              <div className="px-8 py-6">
-                <div className="text-[#CAFF00] text-3xl font-bold mb-1" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "2.2rem" }}>$73.9K</div>
-                <div className="text-[#999] text-xs tracking-[0.15em]">EARNED MEDIA VALUE</div>
-              </div>
-            </div>
-          </motion.div>
+            DISCOVER. ACTIVATE.<br />
+            <span style={{ color: '#CAFF00' }}>MEASURE.</span>
+          </h1>
+          <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
+            JABA helps brands find the right athletes, manage campaign execution, and track performance with first-party data.
+          </p>
         </div>
       </section>
 
-      {/* VIDEO */}
-      <section className="py-20 px-8 border-b border-[#1a1a1a]">
+      {/* ATHLETE DISCOVERY */}
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
-          <Section>
-            <p className="text-[#777] text-xs tracking-[0.3em] mb-4">SEE IT IN ACTION</p>
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              {/* Left - copy */}
-              <div className="flex-1">
-                <h2
-                  className="text-white leading-none mb-6"
-                  style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-                >
-                  AI BUILT FOR THE<br />
-                  PEOPLE WHO WORK<br />
-                  WITH ATHLETES.
-                </h2>
-                <p className="text-[#999] text-base leading-relaxed max-w-sm">
-                  JABA was built from the ground up for schools, agencies and brands managing NIL at scale. This is what that looks like.
-                </p>
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">ATHLETE DISCOVERY</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
+            <h2
+              className="text-white leading-none"
+              style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+            >
+              FIND THE RIGHT<br />
+              ATHLETES.<br />
+              <span style={{ color: '#CAFF00' }}>BEFORE ANYONE ELSE DOES.</span>
+            </h2>
+            <p className="text-white/50 text-base leading-relaxed pt-4">
+              Stop scouting Instagram manually. JABA gives you a structured, searchable athlete database - filtered by sport, school, geography, audience demographics, and topic affinity. Find athletes already posting about your category before you even reach out.
+            </p>
+          </div>
+
+          {/* Filter Bar Mock */}
+          <div className="border border-white/10 rounded-sm p-4 mb-6 flex flex-wrap gap-3 bg-[#111111]">
+            {[
+              { label: 'SPORT', value: 'Football' },
+              { label: 'SCHOOL', value: 'SEC Conference' },
+              { label: 'GEOGRAPHY', value: 'Southeast' },
+              { label: 'TOPIC', value: 'Fitness + Lifestyle' },
+              { label: 'MIN FOLLOWERS', value: '50K+' },
+              { label: 'MIN EMV', value: '$500+' },
+            ].map((f, i) => (
+              <div key={i} className="flex items-center gap-2 border border-white/10 px-3 py-2 rounded-sm bg-black/40">
+                <span className="text-[10px] tracking-[0.15em] text-white/30">{f.label}</span>
+                <span className="text-xs text-white font-medium">{f.value}</span>
+                <span className="text-white/20 text-xs ml-1">×</span>
               </div>
-              {/* Right - vertical video player */}
-              <div className="flex-shrink-0">
-                <div
-                  className="border border-[#222] overflow-hidden"
-                  style={{ width: "315px", height: "560px" }}
-                >
-                  <iframe
-                    width="315"
-                    height="560"
-                    src="https://www.youtube.com/embed/0BCwKKac75Q"
-                    title="AI Built for the People Who Work With Athletes."
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ display: "block" }}
-                  />
+            ))}
+            <div className="flex items-center gap-2 border border-[#CAFF00]/30 px-3 py-2 rounded-sm ml-auto">
+              <span className="text-xs text-[#CAFF00]">38 athletes match</span>
+            </div>
+          </div>
+
+          {/* Athlete Results */}
+          <div className="border border-white/10 rounded-sm overflow-hidden">
+            <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] text-[10px] tracking-[0.15em] text-white/30 border-b border-white/10 px-6 py-3 bg-white/5">
+              <span>ATHLETE</span>
+              <span>FOLLOWERS</span>
+              <span>AVG EMV</span>
+              <span>TOPIC AFFINITY</span>
+              <span>MARKETABILITY</span>
+            </div>
+            {[
+              { name: 'Marcus Webb', school: 'Ohio State · Football', followers: '1.2M', emv: '$1,840', topic: 'Fitness, Game Day', score: 94, organic: true },
+              { name: 'Dani Torres', school: 'UConn · Women\'s Basketball', followers: '674K', emv: '$980', topic: 'Lifestyle, Fashion', score: 93, organic: false },
+              { name: 'Jordan Ellis', school: 'Michigan · Football', followers: '812K', emv: '$1,210', topic: 'Fitness, Outdoors', score: 92, organic: true },
+              { name: 'Aaliyah Reeves', school: 'LSU · Women\'s Basketball', followers: '651K', emv: '$890', topic: 'Beauty, Lifestyle', score: 94, organic: false },
+              { name: 'Tyler Brooks', school: 'Alabama · Baseball', followers: '412K', emv: '$620', topic: 'Fitness, Gaming', score: 88, organic: true },
+            ].map((a, i) => (
+              <div key={i} className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] px-6 py-4 border-b border-white/5 hover:bg-white/5 transition-colors items-center">
+                <div>
+                  <p className="text-white text-sm font-medium">{a.name}</p>
+                  <p className="text-white/30 text-xs">{a.school}</p>
+                  {a.organic && (
+                    <span className="text-[9px] tracking-widest text-[#CAFF00] border border-[#CAFF00]/30 px-1.5 py-0.5 mt-1 inline-block">ORGANIC POSTS ABOUT YOUR CATEGORY</span>
+                  )}
+                </div>
+                <span className="text-white/60 text-sm">{a.followers}</span>
+                <span className="text-[#CAFF00] text-sm">{a.emv}</span>
+                <span className="text-white/40 text-xs">{a.topic}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#CAFF00] text-sm font-medium">{a.score}</span>
+                  <span className="text-white/20 text-xs">/ 100</span>
                 </div>
               </div>
-            </div>
-          </Section>
+            ))}
+          </div>
+          <p className="text-white/30 text-xs mt-4">Filter by sport, school, geography, audience demographics, or topic cluster. EMV calculated using JABA's proprietary formula. Sort by marketability, followers, or brand fit.</p>
         </div>
       </section>
 
       {/* CONTENT TRACKING */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">CONTENT TRACKING</p>
@@ -164,7 +202,7 @@ export default function BrandPage() {
       </section>
 
       {/* AGGREGATED METRICS / DASHBOARD */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">YOUR DASHBOARD</p>
@@ -232,7 +270,7 @@ export default function BrandPage() {
       </section>
 
       {/* TALENT PERFORMANCE */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">TALENT PERFORMANCE</p>
@@ -273,7 +311,7 @@ export default function BrandPage() {
       </section>
 
       {/* CAMPAIGN VISIBILITY */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">CAMPAIGN VISIBILITY</p>
@@ -309,7 +347,7 @@ export default function BrandPage() {
       </section>
 
       {/* BENCHMARK */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">BENCHMARK</p>
@@ -340,8 +378,86 @@ export default function BrandPage() {
         </div>
       </section>
 
+      {/* MARKET INTELLIGENCE */}
+      <section className="py-24 px-8 border-b border-[#1a1a1a] bg-[#0D0D0D]">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs tracking-[0.2em] text-white/40 mb-4">MARKET INTELLIGENCE</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
+            <h2
+              className="text-white leading-none"
+              style={{ fontFamily: 'var(--font-bebas), sans-serif', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+            >
+              SEE WHO YOUR<br />
+              COMPETITORS<br />
+              <span style={{ color: '#CAFF00' }}>ARE WORKING WITH.</span>
+            </h2>
+            <p className="text-white/50 text-base leading-relaxed pt-4">
+              JABA tracks every brand-athlete deal across the platform. See which athletes your competitors are activating, what categories are heating up, and where the whitespace is - before you negotiate your next deal.
+            </p>
+          </div>
+
+          {/* Competitive Intel Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            {[
+              {
+                label: 'COMPETITOR ACTIVITY',
+                heading: 'Brand X signed 4 new football athletes this month.',
+                sub: 'All SEC. Average follower count: 890K. Category: Footwear.',
+                tag: '● ACTIVE NOW',
+                tagColor: '#CAFF00',
+              },
+              {
+                label: 'CATEGORY TREND',
+                heading: 'Women\'s basketball is the fastest-growing NIL category.',
+                sub: '+34% more brand deals signed vs. same period last year.',
+                tag: '↑ TRENDING',
+                tagColor: '#CAFF00',
+              },
+              {
+                label: 'WHITESPACE ALERT',
+                heading: 'No major apparel brand is active with SEC baseball athletes.',
+                sub: '12 athletes in your target demo with no current apparel deal.',
+                tag: '✦ OPPORTUNITY',
+                tagColor: '#CAFF00',
+              },
+            ].map((card, i) => (
+              <div key={i} className="border border-white/10 p-6 rounded-sm bg-[#111111] hover:border-white/20 transition-colors">
+                <p className="text-[10px] tracking-[0.15em] text-white/30 mb-3">{card.label}</p>
+                <p className="text-white text-sm font-medium leading-snug mb-3">{card.heading}</p>
+                <p className="text-white/40 text-xs leading-relaxed mb-4">{card.sub}</p>
+                <span className="text-[10px] tracking-widest font-medium" style={{ color: card.tagColor }}>{card.tag}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Competitor Deal Table */}
+          <div className="border border-white/10 rounded-sm overflow-hidden">
+            <div className="grid grid-cols-4 text-[10px] tracking-[0.15em] text-white/30 border-b border-white/10 px-6 py-3 bg-white/5">
+              <span>COMPETITOR BRAND</span>
+              <span>ATHLETES ACTIVATED</span>
+              <span>CATEGORY</span>
+              <span>EST. SPEND</span>
+            </div>
+            {[
+              { brand: 'Brand X', athletes: '14 athletes', category: 'Footwear · Football', spend: '$420K est.' },
+              { brand: 'Brand Y', athletes: '9 athletes', category: 'Apparel · Multi-sport', spend: '$280K est.' },
+              { brand: 'Brand Z', athletes: '6 athletes', category: 'Beverage · Basketball', spend: '$190K est.' },
+              { brand: 'Brand W', athletes: '11 athletes', category: 'Finance · Football', spend: '$340K est.' },
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-4 px-6 py-4 border-b border-white/5 hover:bg-white/5 transition-colors">
+                <span className="text-white text-sm font-medium">{row.brand}</span>
+                <span className="text-white/60 text-sm">{row.athletes}</span>
+                <span className="text-white/40 text-sm">{row.category}</span>
+                <span className="text-[#CAFF00] text-sm">{row.spend}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-white/30 text-xs mt-4">Competitor data is aggregated and anonymized from JABA's platform network. Actual brand names visible on full platform access.</p>
+        </div>
+      </section>
+
       {/* CREATIVE INTELLIGENCE */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">CREATIVE INTELLIGENCE</p>
@@ -378,7 +494,7 @@ export default function BrandPage() {
       </section>
 
       {/* AI INTELLIGENCE */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">AI INTELLIGENCE</p>
@@ -429,7 +545,7 @@ export default function BrandPage() {
       </section>
 
       {/* CONTENT HUB */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">CONTENT HUB</p>
@@ -466,7 +582,7 @@ export default function BrandPage() {
       </section>
 
       {/* SOCIAL LISTENING */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
+      <section className="py-24 px-8 border-b border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto">
           <Section>
             <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">ALWAYS ON</p>
@@ -480,39 +596,41 @@ export default function BrandPage() {
               <span className="text-xs px-3 py-1.5 border border-[#CAFF00] text-[#CAFF00] tracking-[0.1em]">YOUR BRAND</span>
               <span className="text-xs px-3 py-1.5 border border-[#333] text-[#888] tracking-[0.1em]">COMPETITORS</span>
             </div>
-          </Section>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-[#0A0A0A] py-24 px-8 border-b border-[#1a1a1a]">
-        <div className="max-w-6xl mx-auto">
-          <Section>
-            <p className="text-[#aaa] text-xs tracking-[0.3em] mb-4">NEXT STEPS</p>
-            <h2 className="text-white leading-none mb-6" style={{ fontFamily: "var(--font-bebas), sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
-              LET'S PICK UP<br />WHERE WE LEFT OFF.
-            </h2>
-            <p className="text-[#999] max-w-md mb-10">
-              We'd love to walk you through your specific brand setup. Fifteen minutes is all it takes.
-            </p>
-            <a
-              href="mailto:hello@jaba.ai"
-              className="inline-block border border-white text-white px-10 py-4 text-sm tracking-[0.2em] hover:bg-white hover:text-black transition-colors duration-200"
-            >
-              SCHEDULE A FOLLOW-UP →
-            </a>
+            {/* Mock social listening feed */}
+            <div className="mt-8 space-y-3">
+              {[
+                { platform: 'TW', handle: '@marcuswebb', text: 'Big thanks to Brand X for the gear this season - best fit I\'ve had all year.', time: '2h ago', sentiment: 'POSITIVE', sentColor: '#CAFF00' },
+                { platform: 'IG', handle: '@danitorres_hoops', text: 'Game day ready with my favorite brand. Nothing hits different.', time: '5h ago', sentiment: 'POSITIVE', sentColor: '#CAFF00' },
+                { platform: 'TW', handle: '@nilsportsnews', text: 'Brand X expanding NIL roster ahead of March - 4 new athletes signed this week.', time: '8h ago', sentiment: 'NEUTRAL', sentColor: 'rgba(255,255,255,0.4)' },
+                { platform: 'IG', handle: '@jordanellis_qb', text: 'Switching up my training setup this off-season. Trying some new things.', time: '12h ago', sentiment: 'NEUTRAL', sentColor: 'rgba(255,255,255,0.4)' },
+              ].map((post, i) => (
+                <div key={i} className="flex items-start gap-4 border border-white/10 px-5 py-4 rounded-sm hover:border-white/20 transition-colors">
+                  <span className="text-[10px] tracking-widest text-white/30 border border-white/10 px-2 py-1 mt-0.5">{post.platform}</span>
+                  <div className="flex-1">
+                    <p className="text-white/60 text-xs font-medium mb-1">{post.handle}</p>
+                    <p className="text-white/40 text-sm leading-relaxed">{post.text}</p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <p className="text-[10px] tracking-widest mb-1" style={{ color: post.sentColor }}>{post.sentiment}</p>
+                    <p className="text-white/20 text-xs">{post.time}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-white/30 text-xs mt-4">Monitoring 24/7 across Instagram and Twitter/X. Competitor tracking available on request.</p>
           </Section>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#0A0A0A] px-8 py-8 border-t border-[#1a1a1a]">
+      <footer className="px-8 py-8 border-t border-[#1a1a1a]">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <img src="/jaba-wordmark.png" alt="JABA logo" className="h-10 w-auto" />
           <span className="text-[#666] text-xs">© 2026 JABA</span>
         </div>
       </footer>
 
+      </div>
     </div>
   );
 }
