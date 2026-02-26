@@ -921,7 +921,7 @@ export default function Agency2Page() {
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: UI Card */}
-          <FadeLeft className="md:col-start-2 md:row-start-1">
+          <FadeLeft className="md:col-start-1 md:row-start-1">
             <div className="bg-zinc-900 rounded-2xl border border-white/10 overflow-hidden">
               {/* Tab bar */}
               <div className="flex gap-1 px-4 pt-3 pb-0 border-b border-white/10 flex-shrink-0">
@@ -1043,12 +1043,12 @@ export default function Agency2Page() {
       {/* ── BENTO 3: Centralize Campaign Execution ── */}
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Left: Dashboard mockup */}
-          <FadeLeft>
+          {/* Right: Dashboard mockup */}
+          <FadeLeft className="md:col-start-2 md:row-start-1">
             <ScheduleDashboard />
           </FadeLeft>
-          {/* Right: Text */}
-          <FadeRight>
+          {/* Left: Text */}
+          <FadeRight className="md:col-start-1 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
               Campaign Execution
             </span>
@@ -1074,7 +1074,7 @@ export default function Agency2Page() {
       {/* ── PERFORMANCE ── */}
       <section className="relative z-10 bg-[rgba(0,0,0,0.78)] py-20 px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <FadeRight>
+          <FadeRight className="md:col-start-2 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 rounded-full px-3 py-1 mb-4">
               Performance
             </span>
@@ -1092,7 +1092,7 @@ export default function Agency2Page() {
             </div>
           </FadeRight>
 
-          <FadeLeft>
+          <FadeLeft className="md:col-start-1 md:row-start-1">
             <div
               ref={performanceCardRef}
               className="bg-zinc-900 rounded-2xl overflow-hidden"
@@ -1140,7 +1140,7 @@ export default function Agency2Page() {
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Text */}
-          <FadeLeft>
+          <FadeLeft className="md:col-start-1 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
               Built for the Athlete Economy
             </span>
@@ -1154,9 +1154,9 @@ export default function Agency2Page() {
               Hear from Founder &amp; CEO Jordon Rooney →
             </a>
           </FadeLeft>
-          {/* Left: Video */}
-          <FadeRight className="md:col-start-1 md:row-start-1">
-            <div className="mr-auto ml-0 w-full max-w-[340px] rounded-2xl border border-[#C8FF00]/30 bg-[#111] shadow-[0_0_60px_rgba(180,255,0,0.35)] overflow-hidden">
+          {/* Right: Video */}
+          <FadeRight className="md:col-start-2 md:row-start-1">
+            <div className="ml-auto mr-0 w-full max-w-[340px] rounded-2xl border border-[#C8FF00]/30 bg-[#111] shadow-[0_0_60px_rgba(180,255,0,0.35)] overflow-hidden">
               <div className="relative aspect-[9/16] bg-black">
                 {showBottomShort ? (
                   <iframe
