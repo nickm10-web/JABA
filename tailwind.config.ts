@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         display: ["var(--font-bebas)", "sans-serif"],
+        bricolage: ["var(--font-bricolage)", "system-ui", "sans-serif"],
         sans: ["var(--font-inter)", "sans-serif"],
       },
       colors: {

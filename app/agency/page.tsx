@@ -195,7 +195,7 @@ export default function AgencyPage() {
             </h2>
             <div className="text-white/50 text-base leading-relaxed pt-4">
               <p className="mb-4">
-                Database of over 300,000 brands. Focused on athlete brand deals, not corporate sponsorships. JABA has the contact info and deal history of every brand that has ever worked with an athlete.
+                JABA's database of over 300,000 brands is focused on athlete brand deals, not corporate sponsorships. JABA has the contact info and deal history of every brand that has ever worked with an athlete.
               </p>
               <p className="mb-4">
                 Our AI generates the media kit and crafts the pitch showing the brand exactly how they can work with your athletes.
@@ -229,14 +229,14 @@ export default function AgencyPage() {
                 <p className="text-white font-medium text-sm mb-2">{card.title}</p>
                 <p className="text-white/40 text-xs leading-relaxed mb-4">{card.desc}</p>
                 {i === 0 && (
-                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 overflow-hidden">
+                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 overflow-hidden min-h-[210px] flex flex-col">
                     <div className="px-3 py-2 border-b border-white/10 text-[9px] tracking-[0.15em] text-white/30">CONTACT SEARCH RESULTS</div>
                     {[
-                      { name: 'Sarah Chen', title: 'Head of Partnerships', company: 'Nike', verified: true },
-                      { name: 'Luis Ortega', title: 'Sponsorship Director', company: 'Gatorade', verified: true },
-                      { name: 'Maya Johnson', title: 'Brand Manager', company: 'Adidas', verified: false }
+                      { name: 'Sarah Chen', title: 'Head of Partnerships', company: 'Alo', verified: true },
+                      { name: 'Luis Ortega', title: 'Sponsorship Director', company: 'Vuori', verified: true },
+                      { name: 'Maya Johnson', title: 'Brand Manager', company: 'Fabletics', verified: false }
                     ].map((row, idx) => (
-                      <div key={row.name} className={`px-3 py-2 ${idx < 2 ? 'border-b border-white/5' : ''}`}>
+                      <div key={row.name} className={`px-3 py-3 ${idx < 2 ? 'border-b border-white/5' : ''}`}>
                         <div className="flex items-center justify-between">
                           <p className="text-white/80 text-xs">{row.name}</p>
                           <span className="text-[10px] text-[#0A66C2]">in</span>
@@ -247,33 +247,40 @@ export default function AgencyPage() {
                   </div>
                 )}
                 {i === 1 && (
-                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 overflow-hidden">
+                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 overflow-hidden min-h-[210px] flex flex-col">
                     <div className="grid grid-cols-[1.6fr_1fr_1fr] px-3 py-2 border-b border-white/10 text-[9px] tracking-[0.15em] text-white/30">
                       <span>BRAND</span>
                       <span>DEALS</span>
                       <span>OVERLAP</span>
                     </div>
-                    {[
-                      { brand: 'Nike', deals: '42', overlap: '87%', active: true },
-                      { brand: 'Gatorade', deals: '19', overlap: '73%', active: false },
-                      { brand: 'Adidas', deals: '24', overlap: '68%', active: false },
-                    ].map((row, idx) => (
-                      <div key={row.brand} className={`grid grid-cols-[1.6fr_1fr_1fr] px-3 py-2 ${idx < 2 ? 'border-b border-white/5' : ''} ${row.active ? 'bg-[#CAFF00]/10' : ''}`}>
-                        <span className="text-white/80 text-xs">{row.brand}</span>
-                        <span className="text-white/45 text-xs">{row.deals}</span>
-                        <span className={`${row.active ? 'text-[#CAFF00]' : 'text-white/45'} text-xs`}>{row.overlap} match</span>
-                      </div>
-                    ))}
+                    <div className="flex-1 flex flex-col">
+                      {[
+                        { brand: 'Alo', deals: '42', overlap: '87%', active: true },
+                        { brand: 'Vuori', deals: '19', overlap: '73%', active: false },
+                        { brand: 'Fabletics', deals: '24', overlap: '68%', active: false },
+                      ].map((row, idx) => (
+                        <div key={row.brand} className={`grid grid-cols-[1.6fr_1fr_1fr] px-3 flex-1 items-center ${idx < 2 ? 'border-b border-white/5' : ''} ${row.active ? 'bg-[#CAFF00]/10' : ''}`}>
+                          <span className="text-white/80 text-xs">{row.brand}</span>
+                          <span className="text-white/45 text-xs">{row.deals}</span>
+                          <span className={`${row.active ? 'text-[#CAFF00]' : 'text-white/45'} text-xs`}>{row.overlap} match</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
                 {i === 2 && (
-                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 p-3">
+                  <div className="border border-white/10 rounded-sm bg-black/40 mb-4 p-3 min-h-[210px] flex flex-col">
                     <div className="flex items-center justify-between mb-2">
-                      <p className="text-white/80 text-xs">Jeremiah Smith</p>
+                      <p className="text-white/80 text-xs">Demar Johnson</p>
                       <span className="text-[9px] tracking-widest border border-white/10 px-1.5 py-0.5 text-white/40">FOOTWEAR</span>
                     </div>
                     <p className="text-white/40 text-[10px] mb-2">AUDIENCE OVERLAP</p>
-                    <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mb-1">
+                    <div className="space-y-1 text-[10px] text-white/45 mb-3">
+                      <p>Primary audience: 18-24</p>
+                      <p>Top platform: Instagram Reels</p>
+                      <p>Best fit: Lifestyle + Training</p>
+                    </div>
+                    <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mb-1 mt-auto">
                       <div className="h-full bg-[#CAFF00]" style={{ width: '34%' }} />
                     </div>
                     <p className="text-[#CAFF00] text-[10px]">34% overlap with brand target</p>
