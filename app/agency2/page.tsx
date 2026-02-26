@@ -921,7 +921,7 @@ export default function Agency2Page() {
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: UI Card */}
-          <FadeLeft className="md:col-start-1 md:row-start-1">
+          <FadeLeft className="md:col-start-2 md:row-start-1">
             <div className="bg-zinc-900 rounded-2xl border border-white/10 overflow-hidden">
               {/* Tab bar */}
               <div className="flex gap-1 px-4 pt-3 pb-0 border-b border-white/10 flex-shrink-0">
@@ -986,7 +986,7 @@ export default function Agency2Page() {
             </div>
           </FadeLeft>
           {/* Right: Text */}
-          <FadeRight>
+          <FadeRight className="md:col-start-1 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
               Operational Scale
             </span>
