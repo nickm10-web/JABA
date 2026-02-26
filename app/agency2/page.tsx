@@ -688,7 +688,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── LOGOS MARQUEE ── */}
-      <section className="relative z-10 py-12 overflow-hidden bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-12 overflow-hidden bg-black">
         <FadeUp>
           <p className="text-center text-sm text-white/50 mb-6 tracking-wide">
             JABA is trusted across college athletics &amp; pro sports
@@ -697,8 +697,8 @@ export default function Agency2Page() {
         <div
           className="relative flex overflow-hidden"
           style={{
-            maskImage: "linear-gradient(to right, transparent, black 700px, black calc(100% - 700px), transparent)",
-            WebkitMaskImage: "linear-gradient(to right, transparent, black 700px, black calc(100% - 700px), transparent)",
+            maskImage: "linear-gradient(to right, transparent, black 150px, black calc(100% - 150px), transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 150px, black calc(100% - 150px), transparent)",
           }}
         >
           <div
