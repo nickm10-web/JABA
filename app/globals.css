@@ -19,3 +19,26 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@utility font-bricolage {
+  font-family: var(--font-bricolage);
+}
+
+@utility font-bebas {
+  font-family: var(--font-bebas);
+}
+
+@keyframes taskScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
+
+@keyframes tableScroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
