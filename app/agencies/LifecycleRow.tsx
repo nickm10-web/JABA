@@ -52,16 +52,16 @@ const STAGES: Array<{ topLabel: string; bottomLabel: string; iconSrc?: string; I
 
 function LifecycleNode({ topLabel, bottomLabel, iconSrc, Icon }: { topLabel: string; bottomLabel: string; iconSrc?: string; Icon?: StageIcon }) {
   return (
-    <div className="h-16 w-[98px] rounded-2xl border border-[#C8FF00]/35 bg-white/[0.04] px-2 py-2 backdrop-blur-md flex items-center justify-center md:h-20 md:w-[150px] md:px-3">
+    <div className="h-16 min-w-[98px] rounded-2xl border border-[#C8FF00]/35 bg-white/[0.04] px-3 py-2 backdrop-blur-md flex items-center justify-center md:h-20 md:w-[150px] md:px-2">
       <div className="flex items-center gap-1.5 md:gap-2.5">
         {iconSrc ? (
           <Image src={iconSrc} alt="" aria-hidden width={20} height={20} className="h-4 w-4 md:h-5 md:w-5 object-contain" />
         ) : (
           Icon && <Icon className="h-4 w-4 text-[#C8FF00] md:h-5 md:w-5" />
         )}
-        <span className="leading-tight text-white">
-          <span className="block text-[10px] tracking-[0.12em] font-semibold md:text-[13px] md:tracking-[0.14em]">{topLabel}</span>
-          <span className="block text-[11px] font-semibold md:text-[14px]">{bottomLabel}</span>
+        <span className="leading-tight text-white text-center">
+          <span className="block text-[11px] font-semibold uppercase tracking-[0.04em] md:text-[11px] md:tracking-[0.08em]">{topLabel}</span>
+          <span className="block text-[11px] font-semibold uppercase tracking-[0.04em] md:text-[11px] md:tracking-[0.08em]">{bottomLabel}</span>
         </span>
       </div>
     </div>
@@ -83,9 +83,9 @@ export default function LifecycleRow() {
       role="group"
       aria-label="Campaign lifecycle stages"
     >
-      <ol className="hidden md:flex items-center justify-center gap-3" aria-label="FIND to BENCHMARK lifecycle flow">
+      <ol className="hidden md:flex items-center justify-center gap-2" aria-label="FIND to BENCHMARK lifecycle flow">
         {STAGES.map((stage, index) => (
-          <li key={stage.topLabel} className="flex items-center gap-3">
+          <li key={stage.topLabel} className="flex items-center gap-2 md:gap-1.5">
             <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} iconSrc={stage.iconSrc} Icon={stage.Icon} />
             {index < STAGES.length - 1 && <StageArrow />}
           </li>

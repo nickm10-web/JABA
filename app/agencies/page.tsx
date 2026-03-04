@@ -447,7 +447,7 @@ export default function Agency2Page() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
           <Reveal>
-            <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">JABA helps agencies manage the whole lifecycle of a campaign.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">JABA uses AI to manage the whole lifecycle of a campaign</h2>
             <LifecycleRow />
           </Reveal>
         </section>
@@ -456,25 +456,11 @@ export default function Agency2Page() {
 
         <ContentIntelligenceSection />
 
-        <CampaignAutomationSection />
-
-
         <section className="relative z-10 py-20 px-6 bg-black">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
             <Reveal>
-              <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image
-                  src="/images/agency/jaba-execution-layer.png"
-                  alt="JABA AI assistant managing campaign deliverables through chat"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 520px"
-                />
-              </div>
-            </Reveal>
-            <Reveal>
               <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
-                AI Workflow
+                Text Assistant
               </span>
               <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
                 JABA Acts as the Agency&apos;s <span className="text-[#C8FF00]">Execution Layer.</span>
@@ -491,8 +477,22 @@ export default function Agency2Page() {
                 <li>Payment status and posting windows</li>
               </ul>
             </Reveal>
+            <Reveal>
+              <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/Jaba-text-assistant.png"
+                  alt="JABA AI assistant managing campaign deliverables through chat"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 520px"
+                />
+              </div>
+            </Reveal>
           </div>
         </section>
+
+        <CampaignAutomationSection />
+
         <section className="relative z-10 py-20 px-6 bg-black">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div className="md:col-start-1 md:row-start-1">
