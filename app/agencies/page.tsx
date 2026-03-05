@@ -5,6 +5,7 @@ import Image from "next/image";
 import LifecycleRow from "./LifecycleRow";
 import AthleteIntelligenceSection from "./AthleteIntelligenceSection";
 import ContentIntelligenceSection from "./ContentIntelligenceSection";
+import AthletePerformanceMetricsSection from "./AthletePerformanceMetricsSection";
 import CampaignAutomationSection from "./CampaignAutomationSection";
 
 type LogoItem = { src?: string; alt: string; label?: string; color?: string };
@@ -411,7 +412,7 @@ export default function Agency2Page() {
               {showMainVideo ? (
                 <iframe
                   className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/tkxrYJrkaPA?rel=0&autoplay=1"
+                  src="https://www.youtube.com/embed/0BCwKKac75Q?rel=0&autoplay=1"
                   title="JABA demo video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -424,10 +425,11 @@ export default function Agency2Page() {
                   className="absolute inset-0"
                   onClick={() => setShowMainVideo(true)}
                 >
-                  <Image src="/DAMAR%20HAMLIN%20%282%29.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
+                  <Image src="/video-1-thumbnail.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
                   <span className="absolute inset-0 bg-black/15" />
-                  <span className="absolute inset-0 flex items-center justify-center">
-                    <span className="h-16 w-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl">▶</span>
+                  <span className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                    <span className="h-16 w-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl shadow-lg">▶</span>
+                    <span className="text-white text-xs font-semibold uppercase tracking-widest opacity-80 bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Click to watch</span>
                   </span>
                 </button>
               )}
@@ -455,10 +457,11 @@ export default function Agency2Page() {
         <AthleteIntelligenceSection />
 
         <ContentIntelligenceSection />
+        <AthletePerformanceMetricsSection />
 
         <section className="relative z-10 py-20 px-6 bg-black">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <Reveal>
+            <Reveal className="order-1 md:order-2">
               <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
                 Text Assistant
               </span>
@@ -477,10 +480,10 @@ export default function Agency2Page() {
                 <li>Payment status and posting windows</li>
               </ul>
             </Reveal>
-            <Reveal>
+            <Reveal className="order-2 md:order-1">
               <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
-                  src="/Jaba-text-assistant.png"
+                  src="/jaba-text-assistant-v2.png"
                   alt="JABA AI assistant managing campaign deliverables through chat"
                   fill
                   className="object-cover"
@@ -495,23 +498,8 @@ export default function Agency2Page() {
 
         <section className="relative z-10 py-20 px-6 bg-black">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <div className="md:col-start-1 md:row-start-1">
-              <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
-                Built for the Athlete Economy
-              </span>
-              <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
-                We&apos;re Making it Easy for Everyone to Work With Athletes.
-              </h3>
-              <p className="text-white/60 mb-6">
-                Athletes stay focused on their sport while leveraging their influence away from it.
-              </p>
-              <a href="https://calendly.com/jordon-jaba/jaba" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/5 transition-colors">
-                Hear from Founder &amp; CEO Jordon Rooney →
-              </a>
-            </div>
-
-            <div className="md:col-start-2 md:row-start-1">
-              <div className="ml-auto mr-0 w-full max-w-[340px] rounded-2xl border border-[#C8FF00]/30 bg-[#111] shadow-[0_0_60px_rgba(180,255,0,0.35)] overflow-hidden">
+            <div className="w-full order-2 md:order-1">
+              <div className="ml-0 mr-auto w-full max-w-[340px] rounded-2xl border border-[#C8FF00]/30 bg-[#111] shadow-[0_0_60px_rgba(180,255,0,0.35)] overflow-hidden">
                 <div className="relative aspect-[9/16] bg-black">
                   {showBottomShort ? (
                     <iframe
@@ -537,15 +525,32 @@ export default function Agency2Page() {
                         priority
                       />
                       <span className="absolute inset-0 bg-black/25" />
-                      <span className="absolute inset-0 flex items-center justify-center">
-                        <span className="h-14 w-14 rounded-full bg-white/90 text-black flex items-center justify-center text-lg">
+                      <span className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                        <span className="h-14 w-14 rounded-full bg-white/90 text-black flex items-center justify-center text-lg shadow-lg">
                           ▶
                         </span>
+                        <span className="text-white text-[10px] font-semibold uppercase tracking-widest opacity-80 bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Click to watch</span>
                       </span>
                     </button>
                   )}
                 </div>
               </div>
+            </div>
+
+            <div className="order-1 md:order-2">
+              <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
+                Built for the Athlete Economy
+              </span>
+              <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
+                We&apos;re Making it Easy for Everyone to Work With Athletes.
+              </h3>
+              <p className="text-white/60 mb-6">
+                Athletes stay focused on their sport while leveraging their influence away from it.
+              </p>
+              <a href="https://calendly.com/jordon-jaba/jaba" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/5 transition-colors">
+                <span className="md:hidden">Hear from Founder &amp; CEO Jordon Rooney</span>
+                <span className="hidden md:inline">← Hear from Founder &amp; CEO Jordon Rooney</span>
+              </a>
             </div>
           </div>
         </section>

@@ -27,9 +27,14 @@ export default function AthleteIntelligenceSection() {
             <p className="text-white/60 text-lg mb-4">
               Finding and researching talent and their brand fit - athlete metrics, content and caption style, online reputation, comment sentiment, performance in sponsored content and more. JABA&rsquo;s AI surfaces the right fits, ranked by alignment score.
             </p>
-            <div className="mt-4 flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/40 italic max-w-sm">
-              <span className="text-[#C8FF00] not-italic">›</span>
-              Find me mission-driven athletes
+            <p className="mt-8 mb-2 text-[10px] uppercase tracking-widest text-white/25">Try asking JABA</p>
+            <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-sm backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+              </svg>
+              <span className="text-white/50 font-normal tracking-wide">&quot;Find me mission-driven athletes&quot;</span>
+              <span className="ml-auto text-[#C8FF00]/60 text-xs font-semibold tracking-widest uppercase">Ask →</span>
             </div>
           </div>
         </div>
