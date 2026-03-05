@@ -454,11 +454,6 @@ export default function Agency2Page() {
           </Reveal>
         </section>
 
-        <AthleteIntelligenceSection />
-
-        <ContentIntelligenceSection />
-        <AthletePerformanceMetricsSection />
-
         <section className="relative z-10 py-20 px-6 bg-black">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
             <Reveal className="order-1 md:order-2">
@@ -493,6 +488,11 @@ export default function Agency2Page() {
             </Reveal>
           </div>
         </section>
+
+        <AthleteIntelligenceSection />
+
+        <ContentIntelligenceSection />
+        <AthletePerformanceMetricsSection />
 
         <CampaignAutomationSection />
 
