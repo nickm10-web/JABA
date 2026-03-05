@@ -498,8 +498,8 @@ export default function Agency2Page() {
 
         <section className="relative z-10 py-20 px-6 bg-black">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <div className="w-full order-2 md:order-1">
-              <div className="ml-0 mr-auto w-full max-w-[340px] rounded-2xl border border-[#C8FF00]/30 bg-[#111] shadow-[0_0_60px_rgba(180,255,0,0.35)] overflow-hidden">
+            <div className="w-full order-2 md:order-2">
+              <div className="ml-auto mr-0 w-full max-w-[340px] rounded-2xl border border-[#C8FF00]/30 bg-[#111] shadow-[0_0_60px_rgba(180,255,0,0.35)] overflow-hidden">
                 <div className="relative aspect-[9/16] bg-black">
                   {showBottomShort ? (
                     <iframe
@@ -537,7 +537,7 @@ export default function Agency2Page() {
               </div>
             </div>
 
-            <div className="order-1 md:order-2">
+            <div className="order-1 md:order-1">
               <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
                 Built for the Athlete Economy
               </span>
@@ -548,8 +548,7 @@ export default function Agency2Page() {
                 Athletes stay focused on their sport while leveraging their influence away from it.
               </p>
               <a href="https://calendly.com/jordon-jaba/jaba" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/5 transition-colors">
-                <span className="md:hidden">Hear from Founder &amp; CEO Jordon Rooney</span>
-                <span className="hidden md:inline">← Hear from Founder &amp; CEO Jordon Rooney</span>
+                Hear from Founder &amp; CEO Jordon Rooney →
               </a>
             </div>
           </div>
