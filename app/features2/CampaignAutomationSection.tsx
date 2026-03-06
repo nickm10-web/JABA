@@ -8,7 +8,7 @@ export default function CampaignAutomationSection() {
           <div className="order-2 lg:order-1">
             <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
               <Image
-                src="/Your%20paragraph%20text%20%285%29.png"
+                src="/campaignautomation.png"
                 alt="JABA campaign automation dashboard managing multiple athlete campaigns"
                 fill
                 unoptimized

@@ -25,7 +25,7 @@ export default function PlayflyCrmOutreachSection() {
           <div className="order-2 lg:order-2">
             <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_0_38px_rgba(200,255,0,0.14)]">
               <img
-                src="/playfly-crm-outreach-flow.png"
+                src="/crm.png"
                 alt="CRM flow: contact discovery, brand deal database, and AI outreach"
                 className="w-full h-auto block"
               />

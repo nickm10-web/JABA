@@ -443,9 +443,9 @@ export default function Agency2Page() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
           <Reveal>
             <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">
-              JABA tracks every athlete&apos;s brand, analyzes every post,
+              JABA tracks <span className="text-[#C8FF00]">every athlete&apos;s brand</span>, analyzes <span className="text-[#C8FF00]">athlete metrics</span>,
               <br />
-              and manages deliverables and follow-ups
+              and manages <span className="text-[#C8FF00]">deliverables and follow-ups</span>.
             </h2>
             <LifecycleRow />
           </Reveal>
