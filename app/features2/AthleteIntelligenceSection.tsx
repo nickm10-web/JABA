@@ -20,13 +20,17 @@ export default function AthleteIntelligenceSection() {
 
           <div className="order-1">
             <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Talent Discovery</span>
-            <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">Find the Perfect Athlete&ndash;Brand Fit.</h2>
+            <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">Understand <span className="text-[#C8FF00]">Every Athlete&apos;s Brand.</span></h2>
             <p className="text-white/60 text-lg mb-4">
-              Get the full picture of every athlete - metrics, content style, caption style, and the best ways to activate them.
+              Get the full picture of every athlete — their content, audience, personal brand, and the types of partnerships they naturally align with.
             </p>
-            <p className="text-white/60 text-lg mb-4">
-              Finding and researching talent and their brand fit - athlete metrics, content and caption style, online reputation, comment sentiment, performance in sponsored content and more. JABA&rsquo;s AI surfaces the right fits, ranked by alignment score.
-            </p>
+            <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
+              <li>Analyze what athletes post and how their audience responds</li>
+              <li>Understand tone, caption style, and content themes</li>
+              <li>See how athletes perform in sponsored content</li>
+              <li>Identify athletes that naturally align with brand activations</li>
+              <li>Track audience demographics and engagement patterns</li>
+            </ul>
             <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-sm backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>
                 <circle cx="11" cy="11" r="7" />

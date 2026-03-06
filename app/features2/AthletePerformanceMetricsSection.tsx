@@ -21,18 +21,17 @@ export default function AthletePerformanceMetricsSection() {
           <div className="order-1 lg:order-first">
             <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Athlete Performance Metrics</span>
             <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
-              Benchmark Your Athlete Marketing
+              Benchmark <span className="text-[#C8FF00]">Athlete Marketing.</span>
             </h2>
             <p className="text-white/60 text-lg mb-5">
-              Measure how your athletes and campaigns perform compared to the rest of the market. JABA tracks every metric and benchmarks performance across brands, sports, and platforms.
+              Measure how athletes perform across campaigns and sponsor activations. Benchmark engagement, caption styles, logo visibility, and audience response across schools to understand what drives the strongest brand results.
             </p>
             <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
-              <li>Benchmark athlete posts vs other brand campaigns</li>
-              <li>Measure engagement rate, reach, and content performance</li>
-              <li>Track logo exposure time and brand visibility</li>
-              <li>Compare caption styles and content formats</li>
-              <li>Identify top-performing athlete content</li>
-              <li>Analyze sponsored vs organic campaign results</li>
+              <li>Benchmark athlete engagement across schools</li>
+              <li>Measure sponsor visibility and logo placement</li>
+              <li>Analyze caption and hook performance</li>
+              <li>Track audience sentiment and comment trends</li>
+              <li>Identify top performing athletes for sponsor campaigns</li>
             </ul>
             <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-md backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>

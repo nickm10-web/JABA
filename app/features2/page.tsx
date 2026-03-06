@@ -13,17 +13,15 @@ type LogoItem = { src?: string; alt: string; label?: string; color?: string };
 
 const LOGOS: LogoItem[] = [
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png", alt: "Alabama" },
-  { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png", alt: "Auburn" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png", alt: "Georgia" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png", alt: "Purdue" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png", alt: "Wisconsin" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png", alt: "Notre Dame" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png", alt: "Missouri" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png", alt: "Arkansas" },
-  { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png", alt: "Virginia" },
+  { src: "/Cincinatti-whitelogo.png", alt: "Cincinnati" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png", alt: "Arizona" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png", alt: "ASU" },
-  { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png", alt: "Baylor" },
   { src: "/school-logos/Big3.png", alt: "BIG3" },
   { src: "/school-logos/AU.png", alt: "Athletes Unlimited" },
 ];
@@ -330,18 +328,12 @@ export default function Agency2Page() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black z-[2]" />
           <Reveal className="relative z-10 [transition-delay:80ms]">
             <h1 className="text-5xl md:text-7xl font-black uppercase leading-none mb-6 font-bricolage text-white mx-auto">
-              ATHLETE BRAND
+              AI BUILT FOR THE PEOPLE
               <br />
-              CAMPAIGNS,
-              <br />
-              <span className="text-[#C8FF00]">MANAGED FOR YOU.</span>
+              <span className="text-[#C8FF00]">WHO WORK WITH ATHLETES.</span>
             </h1>
           </Reveal>
-          <Reveal className="relative z-10 [transition-delay:180ms]">
-            <p className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed">
-              This is JABA. AI that makes it easy to collaborate with athletes.
-            </p>
-          </Reveal>
+
           <Reveal className="relative z-10 [transition-delay:280ms]">
             <a
               href="https://calendly.com/jordon-jaba/jaba"
@@ -426,9 +418,9 @@ export default function Agency2Page() {
                   className="absolute inset-0"
                   onClick={() => setShowMainVideo(true)}
                 >
-                  <Image src="/video-1-thumbnail.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
+                  <Image src="/1st-video-thumbnail.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
                   <span className="absolute inset-0 bg-black/15" />
-                  <span className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                  <span className="absolute inset-x-0 bottom-44 md:bottom-48 flex flex-col items-center justify-end gap-2">
                     <span className="h-16 w-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl shadow-lg">▶</span>
                     <span className="text-white text-xs font-semibold uppercase tracking-widest opacity-80 bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">Click to watch</span>
                   </span>
@@ -450,7 +442,11 @@ export default function Agency2Page() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
           <Reveal>
-            <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">JABA uses AI to manage the whole lifecycle of a campaign</h2>
+            <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">
+              JABA tracks every athlete&apos;s brand, analyzes every post,
+              <br />
+              and manages deliverables and follow-ups
+            </h2>
             <LifecycleRow />
           </Reveal>
         </section>
@@ -462,7 +458,8 @@ export default function Agency2Page() {
                 Text Assistant
               </span>
               <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
-                JABA Acts as the Agency&apos;s <span className="text-[#C8FF00]">Execution Layer.</span>
+                JABA Is the <span className="text-[#C8FF00]">Execution Layer</span> <span className="text-white">Behind</span>{" "}
+                <span className="text-[#C8FF00]">Every Campaign.</span>
               </h3>
               <p className="text-white/60 mb-3">
                 JABA&apos;s AI will manage every deliverable for you and send reminders on:
@@ -555,32 +552,6 @@ export default function Agency2Page() {
             </div>
           </div>
         </section>
-
-        <section className="relative z-10 py-24 px-6 bg-black">
-          <Reveal>
-            <div
-              className="max-w-[780px] mx-auto rounded-3xl py-16 px-12 border border-white/10 text-center"
-              style={{
-                background: "linear-gradient(135deg, #2d1b6e 0%, #1a0f4a 50%, #0d0820 100%)",
-                boxShadow: "0 0 80px 20px rgba(123, 92, 240, 0.15)",
-              }}
-            >
-              <h2 className="font-bricolage text-4xl md:text-5xl font-bold text-white mb-4">Let&apos;s Talk About Your Campaigns</h2>
-              <p className="text-white/60 text-lg mb-8">
-                See how agencies use JABA to find athletes, run campaigns, and prove ROI  -  all in one place.
-              </p>
-              <a
-                href="https://calendly.com/jordon-jaba/jaba"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white transition-all hover:scale-105 bg-gradient-to-br from-[#c084fc] via-[#7B5CF0] to-[#38bdf8] shadow-[0_0_30px_rgba(123,92,240,0.45),0_0_60px_rgba(56,189,248,0.15)] border border-white/25 hover:shadow-[0_0_40px_rgba(123,92,240,0.65),0_0_70px_rgba(56,189,248,0.25)]"
-              >
-                Demo JABA ↗
-              </a>
-            </div>
-          </Reveal>
-        </section>
-
         <footer className="bg-black border-t border-white/5 px-6 py-10">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <Image src="/jaba-wordmark.png" alt="JABA" width={120} height={40} className="object-contain" />

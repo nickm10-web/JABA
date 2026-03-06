@@ -6,7 +6,7 @@ export default function PlayflyCrmOutreachSection() {
           <div className="order-1 lg:order-1">
             <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">CRM + AI Outreach</span>
             <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
-              AI handles the follow-up. You handle the close.
+              AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
             </h2>
             <p className="text-white/60 text-lg mb-5">
               JABA keeps your deal pipeline organized and moving. It finds the right contact, pulls brand deal history, drafts outreach, logs every interaction, and tells you exactly who to follow up with next.

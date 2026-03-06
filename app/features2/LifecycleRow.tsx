@@ -42,11 +42,11 @@ function ArrowDownIcon(props: IconProps) {
 }
 
 const STAGES: Array<{ topLabel: string; bottomLabel: string; iconSrc?: string; Icon?: StageIcon }> = [
-  { topLabel: "FIND", bottomLabel: "Talent", iconSrc: "/school-logos/icon_find.png" },
-  { topLabel: "LAUNCH", bottomLabel: "Campaign", Icon: LaunchArrowIcon },
-  { topLabel: "MANAGE", bottomLabel: "Deliverables", Icon: ClipboardIcon },
-  { topLabel: "OPTIMIZE", bottomLabel: "Content", iconSrc: "/school-logos/icon_optimize.png" },
-  { topLabel: "REPORT", bottomLabel: "Results", iconSrc: "/school-logos/icon_report.png" },
+  { topLabel: "DISCOVER", bottomLabel: "Brand Opportunities", iconSrc: "/school-logos/icon_find.png" },
+  { topLabel: "ANALYZE", bottomLabel: "Athlete Content", Icon: LaunchArrowIcon },
+  { topLabel: "MEASURE", bottomLabel: "School IP Performance", Icon: ClipboardIcon },
+  { topLabel: "TRACK", bottomLabel: "Campaign Deliverables", iconSrc: "/school-logos/icon_optimize.png" },
+  { topLabel: "MONITOR", bottomLabel: "Sponsor Activations", iconSrc: "/school-logos/icon_report.png" },
   { topLabel: "BENCHMARK", bottomLabel: "Performance", iconSrc: "/school-logos/icon_benchmark.png" },
 ];
 

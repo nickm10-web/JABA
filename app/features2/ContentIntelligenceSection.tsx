@@ -22,16 +22,16 @@ export default function ContentIntelligenceSection() {
           <div className="order-1 lg:order-last">
             <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Content Intelligence</span>
             <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
-              1M+ Posts Analyzed.
+              1M+ Posts <span className="text-[#C8FF00]">Analyzed.</span>
             </h2>
             <p className="text-white/60 text-lg mb-5">
               See what athlete content performed best and why. Explore posts across sports, brands, and platforms to understand what drives engagement and how brands are showing up in athlete content.
             </p>
             <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
-              <li>Search every athlete post across your network</li>
-              <li>Track logo placement and brand visibility</li>
+              <li>Search every athlete post across your schools</li>
+              <li>Track sponsor logo placement and school IP visibility</li>
               <li>Analyze hooks, pacing, and caption style</li>
-              <li>Compare sponsored vs organic posts</li>
+              <li>Compare sponsor activations vs organic athlete content</li>
               <li>Discover trends across thousands of campaigns</li>
             </ul>
             <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-md backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
