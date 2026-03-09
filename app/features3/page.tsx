@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import Image from "next/image";
+import LifecycleRow from "./LifecycleRow";
 // ─── Scroll reveal hook ──────────────────────────────────────────────────────
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -906,54 +907,13 @@ export default function Agency2Page() {
           <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">
             AI that manages the whole campaign lifecycle.
           </h2>
+          <LifecycleRow />
         </FadeUp>
-        <div className="flex flex-wrap justify-center items-start gap-0 max-w-5xl mx-auto">
-          {[
-            { SvgIcon: HandshakeIcon, label: "Pitch brand deals" },
-            { SvgIcon: LayersIcon, label: "Build campaigns" },
-            { SvgIcon: ChecklistIcon, label: "Manage athletes\nand deliverables" },
-            { SvgIcon: ReceiptCheckIcon, label: "Track every post\nand approval" },
-            { SvgIcon: ChartUpIcon, label: "Showcase ROI" },
-          ].map(({ SvgIcon, label }, i) => (
-            <FadeUp key={i} delay={i * 120} className="flex items-center">
-              <div className="flex flex-col items-center gap-3 px-2">
-                <div className="w-24 h-24 border border-[#C8FF00]/50 rounded-2xl flex items-center justify-center bg-gradient-to-b from-[#12170a] to-[#090b06] shadow-[0_0_18px_rgba(200,255,0,0.18)]">
-                  <SvgIcon />
-                </div>
-                <p className="text-[#C8FF00] text-sm font-semibold whitespace-pre-line text-center leading-tight max-w-[120px]">
-                  {label}
-                </p>
-              </div>
-              {i < 4 && (
-                <div className="hidden md:flex items-center mx-1 mb-10">
-                  <svg width="56" height="8" viewBox="0 0 56 8">
-                    <circle cx="3" cy="4" r="1.5" fill="#C8FF00" opacity="0.8" />
-                    <line x1="7" y1="4" x2="48" y2="4" stroke="#C8FF00" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.8" />
-                  </svg>
-                  <svg width="8" height="8" viewBox="0 0 8 8" className="-ml-1">
-                    <path d="M0 4 L8 4 M5 1 L8 4 L5 7" stroke="#C8FF00" strokeWidth="1.5" fill="none" />
-                  </svg>
-                </div>
-              )}
-            </FadeUp>
-          ))}
-        </div>
       </section>
       {/* ── BENTO 1: AI Execution Layer ── */}
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+        <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Left: Execution layer image */}
-          <FadeLeft className="md:col-start-2 md:row-start-1">
-            <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-              <Image
-                src="/jaba-text-assistant-v2.png"
-                alt="JABA AI assistant managing campaign deliverables through chat"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 520px"
-              />
-            </div>
-          </FadeLeft>
           {/* Right: Text */}
           <FadeRight className="md:col-start-1 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
@@ -977,10 +937,24 @@ export default function Agency2Page() {
               <li>Payment status and contract milestones</li>
             </ul>
           </FadeRight>
+          {/* Left: Execution layer image */}
+          <FadeLeft className="md:col-start-2 md:row-start-1">
+            <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/jaba-text-assistant-v2.png"
+                alt="JABA AI assistant managing campaign deliverables through chat"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 520px"
+              />
+            </div>
+          </FadeLeft>
         </div>
+        </FadeUp>
       </section>
       {/* ── BENTO 2: Replace Manual Deliverable Tracking ── */}
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+        <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Right: Text */}
           <FadeLeft className="md:order-2">
@@ -1010,24 +984,12 @@ export default function Agency2Page() {
             </div>
           </FadeRight>
         </div>
+        </FadeUp>
       </section>
       {/* ── BENTO 3: Centralize Campaign Execution ── */}
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+        <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Right: Campaign execution image */}
-          <FadeLeft className="md:col-start-2 md:row-start-1">
-            <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-              <Image
-                src="/campaignautomation.png"
-                alt="JABA campaign execution automation view"
-                fill
-                unoptimized
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 520px"
-              />
-              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-            </div>
-          </FadeLeft>
           {/* Left: Text */}
           <FadeRight className="md:col-start-1 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
@@ -1043,13 +1005,74 @@ export default function Agency2Page() {
               JABA gives teams real-time visibility into what is live, what is due, and what needs attention so nothing slips through the cracks.
             </p>
           </FadeRight>
+          {/* Right: Campaign execution image */}
+          <FadeLeft className="md:col-start-2 md:row-start-1">
+            <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/campaignautomation.png"
+                alt="JABA campaign execution automation view"
+                fill
+                unoptimized
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 520px"
+              />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            </div>
+          </FadeLeft>
         </div>
+        </FadeUp>
+      </section>
+      {/* ── TALENT DISCOVERY ── */}
+      <section className="relative z-10 py-16 bg-black">
+        <FadeUp>
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="relative w-full max-w-[560px] mx-auto lg:mx-0 aspect-[1/1] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/images/agency/damar%20hamlin%20athlete%20intel.png"
+                  alt="Athlete analytics preview featuring Damar Hamlin"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Roster Intelligence</span>
+              <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
+                Understand Every Athlete on Your Roster.
+              </h2>
+              <p className="text-white/60 text-lg mb-4">
+                JABA analyzes every athlete your agency represents, tracking their content, audience, personal brand, and the types of partnerships they naturally align with. Instead of guessing which athletes to pitch to brands, your team can see exactly how each athlete performs and where the strongest brand opportunities exist.
+              </p>
+              <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
+                <li>Analyze what athletes post and how their audience responds</li>
+                <li>Understand tone, caption style, and content themes</li>
+                <li>See how athletes perform in sponsored content</li>
+                <li>Identify which athletes align best with specific brands</li>
+                <li>Track audience demographics and engagement patterns</li>
+              </ul>
+              <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-sm backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+                </svg>
+                <span className="text-white/50 font-normal tracking-wide">&quot;Find athletes that fit a brand campaign&quot;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </FadeUp>
       </section>
       {/* ── CONTENT INTELLIGENCE ── */}
       <section className="relative z-10 py-16 bg-black">
+        <FadeUp>
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-2 lg:order-first">
+            <div className="order-2 lg:order-last">
               <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/content-intelligence-v3.png"
@@ -1063,7 +1086,7 @@ export default function Agency2Page() {
               </div>
             </div>
 
-            <div className="order-1 lg:order-last">
+            <div className="order-1 lg:order-first">
               <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Content Intelligence</span>
               <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
                 1M+ Posts <span className="text-[#C8FF00]">Analyzed</span>.
@@ -1088,12 +1111,14 @@ export default function Agency2Page() {
             </div>
           </div>
         </div>
+        </FadeUp>
       </section>
       {/* ── CRM + AI OUTREACH ── */}
       <section className="relative z-10 bg-[rgba(0,0,0,0.78)] py-24 px-6">
+        <FadeUp>
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-1 lg:order-1">
+            <div className="order-1 lg:order-2">
               <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">CRM + AI Outreach</span>
               <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
                 AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
@@ -1111,7 +1136,7 @@ export default function Agency2Page() {
               </ul>
             </div>
 
-            <div className="order-2 lg:order-2">
+            <div className="order-2 lg:order-1">
               <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <img
                   src="/CRM.png"
@@ -1122,9 +1147,11 @@ export default function Agency2Page() {
             </div>
           </div>
         </div>
+        </FadeUp>
       </section>
       {/* ── ATHLETE ECONOMY ── */}
       <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+        <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Text */}
           <FadeLeft className="md:col-start-1 md:row-start-1">
@@ -1180,6 +1207,7 @@ export default function Agency2Page() {
             </div>
           </FadeRight>
         </div>
+        </FadeUp>
       </section>
       {/* ── FOOTER ── */}
       <footer className="relative pt-20 pb-10 px-6 border-t border-white/10 bg-black overflow-hidden">
