@@ -598,60 +598,6 @@ export default function Agency2Page() {
 
   return (
     <>
-      <div
-        className="fixed inset-0 pointer-events-none overflow-hidden"
-        style={{ zIndex: 0 }}
-        aria-hidden="true"
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "-10%",
-            left: "-15%",
-            width: "70vw",
-            height: "70vw",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(123,92,240,0.28) 0%, rgba(123,92,240,0.08) 45%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: "30%",
-            right: "-20%",
-            width: "55vw",
-            height: "55vw",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(100,60,220,0.22) 0%, rgba(100,60,220,0.06) 50%, transparent 70%)",
-            filter: "blur(50px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: "60%",
-            left: "-10%",
-            width: "50vw",
-            height: "50vw",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(139,92,246,0.20) 0%, rgba(139,92,246,0.05) 50%, transparent 70%)",
-            filter: "blur(45px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-5%",
-            left: "25%",
-            width: "50vw",
-            height: "50vw",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(123,92,240,0.32) 0%, rgba(123,92,240,0.08) 45%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
-      </div>
       <main className="text-white font-sans overflow-x-hidden relative" style={{ zIndex: 1 }}>
       {/* ── NAVBAR ── */}
       <nav className="sticky top-0 z-50 relative z-10 flex items-center justify-between px-6 md:px-12 h-16 bg-black border-b border-white/5">
@@ -1211,9 +1157,6 @@ export default function Agency2Page() {
       </section>
       {/* ── FOOTER ── */}
       <footer className="relative pt-20 pb-10 px-6 border-t border-white/10 bg-black overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: "radial-gradient(circle at center bottom, rgba(123,92,240,0.22), transparent 55%)"
-        }} />
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mb-10">
             <div>
