@@ -757,7 +757,7 @@ export default function Agency2Page() {
         `}</style>
       </section>
       {/* ── SEE IT IN ACTION ── */}
-      <section className="relative z-10 bg-[rgba(0,0,0,0.78)] py-20 px-6">
+      <section className="relative z-10 bg-black py-20 px-6">
         <FadeUp>
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold font-bricolage text-white text-center mb-10">
@@ -811,7 +811,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── OPERATIONAL REALITY ── */}
-      <section className="relative z-10 py-24 px-6 text-center bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-24 px-6 text-center bg-black">
         <FadeUp>
           <span className="inline-block text-xs font-medium border border-white/20 text-white/70 px-3 py-1 rounded-full mb-6">
             Operational Reality
@@ -869,7 +869,7 @@ export default function Agency2Page() {
         </div>
       </section>
       {/* ── VIDEO SECTION ── */}
-      <section className="relative z-10 py-20 px-6 flex justify-center bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-20 px-6 flex justify-center bg-black">
         <div
           className="relative w-full max-w-5xl rounded-2xl overflow-hidden"
           style={{ boxShadow: "0 0 60px 12px rgba(180,255,0,0.35)" }}
@@ -902,7 +902,7 @@ export default function Agency2Page() {
         </div>
       </section>
       {/* ── LIFECYCLE FLOW ── */}
-      <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)] text-center">
+      <section className="relative z-10 py-20 px-6 bg-black text-center">
         <FadeUp>
           <h2 className="text-3xl md:text-5xl font-bold font-bricolage text-white mb-16">
             AI that manages the whole campaign lifecycle.
@@ -911,7 +911,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── BENTO 1: AI Execution Layer ── */}
-      <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-20 px-6 bg-black">
         <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Right: Text */}
@@ -953,7 +953,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── BENTO 2: Replace Manual Deliverable Tracking ── */}
-      <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-20 px-6 bg-black">
         <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Right: Text */}
@@ -987,7 +987,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── BENTO 3: Centralize Campaign Execution ── */}
-      <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-20 px-6 bg-black">
         <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Text */}
@@ -1114,7 +1114,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── CRM + AI OUTREACH ── */}
-      <section className="relative z-10 bg-[rgba(0,0,0,0.78)] py-24 px-6">
+      <section className="relative z-10 bg-black py-24 px-6">
         <FadeUp>
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -1150,7 +1150,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── ATHLETE ECONOMY ── */}
-      <section className="relative z-10 py-20 px-6 bg-[rgba(0,0,0,0.78)]">
+      <section className="relative z-10 py-20 px-6 bg-black">
         <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Text */}
