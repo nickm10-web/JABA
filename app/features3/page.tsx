@@ -969,7 +969,7 @@ export default function Agency2Page() {
             <div className="order-2 md:order-2">
               <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
-                  src="/CRM.png"
+                  src="/Pitch-brand.png"
                   alt="CRM flow: contact discovery, brand deal database, and AI outreach"
                   fill
                   className="object-cover"
