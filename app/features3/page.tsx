@@ -608,7 +608,7 @@ export default function Agency2Page() {
       </nav>
       {/* ── HERO ── */}
       <section
-        className="relative min-h-[82vh] flex flex-col items-center justify-start text-center px-6 pt-24 md:pt-28 pb-14"
+        className="relative min-h-[72vh] flex flex-col items-center justify-center text-center px-6 pt-0 pb-0"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.62), rgba(0,0,0,0.82)), url('/header-bg-without-balls.jpg')`,
           backgroundSize: "cover",
@@ -617,17 +617,17 @@ export default function Agency2Page() {
       >
         <StarField />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black z-[2]" />
+        <FadeUp delay={50} className="relative z-10">
+          <p className="text-white text-lg md:text-xl font-bold uppercase tracking-widest mb-4">
+            This is JABA.
+          </p>
+        </FadeUp>
         <FadeUp delay={100} className="relative z-10">
-          <h1 className="text-5xl md:text-7xl font-extrabold font-bricolage leading-tight text-[#C8FF00] mx-auto">
+          <h1 className="text-5xl md:text-7xl font-extrabold font-bricolage leading-[0.92] md:leading-[0.9] text-[#C8FF00] mx-auto">
             AI BUILT FOR
             <br />
             ATHLETE AGENCIES
           </h1>
-        </FadeUp>
-        <FadeUp delay={250} className="relative z-10">
-          <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed">
-            JABA coordinates contracts, campaigns, timelines, and execution across athletes and brands so nothing slips and nothing gets missed.
-          </p>
         </FadeUp>
         <FadeUp delay={400} className="relative z-10">
           <a href="https://calendly.com/jordon-jaba/jaba" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-white transition-all hover:scale-105 bg-gradient-to-br from-[#c084fc] via-[#7B5CF0] to-[#38bdf8] shadow-[0_0_30px_rgba(123,92,240,0.45),0_0_60px_rgba(56,189,248,0.15)] border border-white/25 hover:shadow-[0_0_40px_rgba(123,92,240,0.65),0_0_70px_rgba(56,189,248,0.25)]">
@@ -636,7 +636,7 @@ export default function Agency2Page() {
         </FadeUp>
       </section>
       {/* ── LOGOS MARQUEE ── */}
-      <section className="relative z-10 py-12 overflow-hidden bg-black">
+      <section className="relative z-10 py-6 overflow-hidden bg-black">
         <FadeUp>
           <p className="text-center text-sm text-white/50 mb-6 tracking-wide">
             JABA is trusted across college athletics &amp; pro sports
@@ -657,14 +657,14 @@ export default function Agency2Page() {
             }}
           >
             {[...LOGOS, ...LOGOS, ...LOGOS].map((logo, i) => (
-              <div key={i} className="flex-shrink-0">
+              <div key={i} className="flex-shrink-0 flex flex-col items-center gap-2 min-w-[68px]">
                 {logo.src ? (
                   <img
                     src={logo.src}
                     alt={logo.alt}
                     width={48}
                     height={48}
-                    className="w-12 h-12 object-contain"
+                    className="w-16 h-16 object-contain"
                     style={{ display: "block" }}
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = "none";
@@ -683,6 +683,9 @@ export default function Agency2Page() {
                     {logo.label}
                   </div>
                 )}
+                <p className="text-[10px] leading-none text-white/55 whitespace-nowrap text-center">
+                  {logo.alt}
+                </p>
               </div>
             ))}
           </div>
@@ -898,37 +901,79 @@ export default function Agency2Page() {
         </div>
         </FadeUp>
       </section>
-      {/* ── BENTO 2: Replace Manual Deliverable Tracking ── */}
-      <section className="relative z-10 py-20 px-6 bg-black">
+      {/* ── BRAND DISCOVERY ── */}
+      <section className="relative z-10 bg-black py-24 px-6">
         <FadeUp>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          {/* Right: Text */}
-          <FadeLeft className="md:order-2">
-            <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
-              Operational Scale
-            </span>
-            <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
-              Replace Manual <span className="text-[#C8FF00]">Deliverable Tracking.</span>
-            </h3>
-            <p className="text-white/60 mb-2">
-              Once a deal is signed, execution becomes the bottleneck.
-            </p>
-            <p className="text-white/60 mb-6">
-              JABA replaces spreadsheets, reminders, and checklists with a single system that tracks every deliverable, deadline, and approval across athletes and campaigns.
-            </p>
-          </FadeLeft>
-          {/* Right: Operational scale image */}
-          <FadeRight>
-            <div className="relative w-full max-w-[560px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-              <Image
-                src="/school-logos/Operational-scale.png"
-                alt="Operational scale dashboard for deliverable tracking"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 560px"
-              />
+          <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+              <div className="order-1 md:order-2">
+                <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Brand Discovery</span>
+                <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
+                  Find Brands Already Working <span className="text-[#C8FF00]">With Athletes.</span>
+                </h2>
+                <p className="text-white/60 text-lg mb-5">
+                  JABA&apos;s database of over 300,000 brands shows exactly how companies activate with athletes. See which brands are already running athlete campaigns, understand deal history, and find the right decision makers to contact.
+                </p>
+                <p className="text-white/60 text-lg mb-5">
+                  This focuses on athlete brand deals, not corporate sponsorships.
+                </p>
+                <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
+                  <li>Discover brands actively working with athletes</li>
+                  <li>See deal history and athlete partnerships</li>
+                  <li>Identify audience overlap between brands and your athletes</li>
+                  <li>Find verified marketing and partnership contacts</li>
+                </ul>
+              </div>
+
+              <div className="order-2 md:order-1">
+                <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <img
+                    src="/find-brands.png"
+                    alt="Brand discovery view showing athlete brand opportunities"
+                    className="w-full h-auto block"
+                  />
+                </div>
+              </div>
             </div>
-          </FadeRight>
+          </div>
+        </FadeUp>
+      </section>
+      {/* ── CRM + AI OUTREACH ── */}
+      <section className="relative z-10 bg-black py-24 px-6">
+        <FadeUp>
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="order-1 md:order-1">
+              <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">CRM + AI Outreach</span>
+              <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
+                AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
+              </h2>
+              <p className="text-white/60 text-lg mb-5">
+                Once you identify the right brand, JABA generates the pitch and helps you start the conversation.
+              </p>
+              <p className="text-white/60 text-lg mb-5">
+                Our AI automatically creates media kits, writes outreach messages, and tracks every interaction so your team can focus on closing deals.
+              </p>
+
+              <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
+                <li>Generate AI media kits for each athlete</li>
+                <li>Create custom brand pitches in seconds</li>
+                <li>Draft personalized outreach emails</li>
+                <li>Send messages directly to brand decision makers</li>
+                <li>Track follow-ups and deal activity in one pipeline</li>
+              </ul>
+            </div>
+
+            <div className="order-2 md:order-2">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <img
+                  src="/Pitch-brand.png"
+                  alt="CRM flow: contact discovery, brand deal database, and AI outreach"
+                  className="w-full h-auto block"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         </FadeUp>
       </section>
@@ -937,7 +982,7 @@ export default function Agency2Page() {
         <FadeUp>
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Left: Text */}
-          <FadeRight className="md:col-start-1 md:row-start-1">
+          <FadeRight className="order-1 md:order-2 md:col-start-2 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
               Campaign Execution
             </span>
@@ -952,7 +997,7 @@ export default function Agency2Page() {
             </p>
           </FadeRight>
           {/* Right: Campaign execution image */}
-          <FadeLeft className="md:col-start-2 md:row-start-1">
+          <FadeLeft className="order-2 md:order-1 md:col-start-1 md:row-start-1">
             <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
               <Image
                 src="/campaignautomation.png"
@@ -972,21 +1017,8 @@ export default function Agency2Page() {
       <section className="relative z-10 py-16 bg-black">
         <FadeUp>
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="relative w-full max-w-[560px] mx-auto lg:mx-0 aspect-[1/1] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image
-                  src="/images/agency/damar%20hamlin%20athlete%20intel.png"
-                  alt="Athlete analytics preview featuring Damar Hamlin"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                />
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="order-1 md:order-1">
               <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Roster Intelligence</span>
               <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
                 Understand Every Athlete on Your Roster.
@@ -1009,6 +1041,19 @@ export default function Agency2Page() {
                 <span className="text-white/50 font-normal tracking-wide">&quot;Find athletes that fit a brand campaign&quot;</span>
               </div>
             </div>
+
+            <div className="order-2 md:order-2">
+              <div className="relative w-full max-w-[560px] mx-auto lg:mx-0 aspect-[1/1] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/images/agency/damar%20hamlin%20athlete%20intel.png"
+                  alt="Athlete analytics preview featuring Damar Hamlin"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+              </div>
+            </div>
           </div>
         </div>
         </FadeUp>
@@ -1017,22 +1062,8 @@ export default function Agency2Page() {
       <section className="relative z-10 py-16 bg-black">
         <FadeUp>
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-2 lg:order-last">
-              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <Image
-                  src="/content-intelligence-v3.png"
-                  alt="JABA content intelligence hub analyzing athlete social media posts"
-                  fill
-                  unoptimized
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 520px"
-                />
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              </div>
-            </div>
-
-            <div className="order-1 lg:order-first">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="order-1 md:order-2">
               <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Content Intelligence</span>
               <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
                 1M+ Posts <span className="text-[#C8FF00]">Analyzed</span>.
@@ -1055,40 +1086,17 @@ export default function Agency2Page() {
                 <span className="text-white/50 font-normal tracking-wide">&quot;What sponsored athlete content performs the best?&quot;</span>
               </div>
             </div>
-          </div>
-        </div>
-        </FadeUp>
-      </section>
-      {/* ── CRM + AI OUTREACH ── */}
-      <section className="relative z-10 bg-black py-24 px-6">
-        <FadeUp>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="order-1 lg:order-2">
-              <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">CRM + AI Outreach</span>
-              <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
-                AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
-              </h2>
-              <p className="text-white/60 text-lg mb-5">
-                JABA keeps your deal pipeline organized and moving. Our database of over 300,000 brands shows exactly how companies work with athletes. Find the right contacts, see deal history and audience overlap, generate outreach drafts in seconds, and track every interaction so you always know who to follow up with next.
-              </p>
-
-              <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
-                <li>Find verified brand and partnership contacts</li>
-                <li>See brand deal history and audience overlap</li>
-                <li>Generate AI media kits and pitch decks for your athletes</li>
-                <li>Create personalized outreach drafts in seconds</li>
-                <li>Auto-log activity and track follow-ups across every deal</li>
-              </ul>
-            </div>
-
-            <div className="order-2 lg:order-1">
+            <div className="order-2 md:order-1">
               <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <img
-                  src="/CRM.png"
-                  alt="CRM flow: contact discovery, brand deal database, and AI outreach"
-                  className="w-full h-auto block"
+                <Image
+                  src="/content-intelligence-v3.png"
+                  alt="JABA content intelligence hub analyzing athlete social media posts"
+                  fill
+                  unoptimized
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 520px"
                 />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
             </div>
           </div>
