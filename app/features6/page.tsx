@@ -489,6 +489,77 @@ export default function Agency2Page() {
           </div>
         </section>
 
+        <section className="relative z-10 bg-black pt-24 pb-12 px-6">
+          <Reveal>
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div className="order-1 md:order-1">
+                  <SectionBadge label="Brand Discovery" />
+                  <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
+                    Find Brands Already Working <span className="text-[#C8FF00]">With Athletes.</span>
+                  </h2>
+                  <p className="text-white/60 text-lg mb-5">
+                    Search 300,000+ brands actively working with athletes. See deal history, find decision makers, and identify who&apos;s the right fit.
+                  </p>
+                  <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
+                    <li>Discover brands actively working with athletes</li>
+                    <li>See deal history and audience overlap</li>
+                    <li>Find verified marketing and partnership contacts</li>
+                  </ul>
+                </div>
+
+                <div className="order-2 md:order-2">
+                  <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    <Image
+                      src="/find-brands.png"
+                      alt="Brand discovery view showing athlete brand opportunities"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+
+        <section className="relative z-10 bg-black pt-12 pb-24 px-6">
+          <Reveal>
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div className="order-1 md:order-2">
+                  <SectionBadge label="CRM + AI Outreach" />
+                  <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
+                    AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
+                  </h2>
+                  <p className="text-white/60 text-lg mb-5">
+                    Once you find the right brand, JABA builds the pitch. AI media kits, outreach emails, and deal tracking - all in one place.
+                  </p>
+
+                  <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
+                    <li>Generate AI media kits for each athlete</li>
+                    <li>Draft personalized outreach emails in seconds</li>
+                    <li>Track follow-ups and deal activity in one pipeline</li>
+                  </ul>
+                </div>
+
+                <div className="order-2 md:order-1">
+                  <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    <Image
+                      src="/Pitch-brand.png"
+                      alt="CRM flow: contact discovery, brand deal database, and AI outreach"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </section>
+
         <AthleteIntelligenceSection />
 
         <ContentIntelligenceSection />
