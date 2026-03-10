@@ -866,7 +866,7 @@ export default function Agency2Page() {
           {/* Right: Text */}
           <FadeRight className="md:col-start-1 md:row-start-1">
             <span className="inline-block text-xs font-medium border border-white/20 text-white/60 px-3 py-1 rounded-full mb-4">
-              AI Workflow
+              Text Assistant
             </span>
             <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
               JABA Acts as the Agency&apos;s <span className="text-[#C8FF00]">Execution Layer.</span>
@@ -927,10 +927,12 @@ export default function Agency2Page() {
 
               <div className="order-2 md:order-1">
                 <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  <img
+                  <Image
                     src="/find-brands.png"
                     alt="Brand discovery view showing athlete brand opportunities"
-                    className="w-full h-auto block"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 520px"
                   />
                 </div>
               </div>
@@ -966,10 +968,12 @@ export default function Agency2Page() {
 
             <div className="order-2 md:order-2">
               <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <img
-                  src="/Pitch-brand.png"
+                <Image
+                  src="/CRM.png"
                   alt="CRM flow: contact discovery, brand deal database, and AI outreach"
-                  className="w-full h-auto block"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 520px"
                 />
               </div>
             </div>
@@ -1021,7 +1025,9 @@ export default function Agency2Page() {
             <div className="order-1 md:order-1">
               <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Roster Intelligence</span>
               <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
-                Understand Every Athlete on Your Roster.
+                Understand <span className="text-[#C8FF00]">Every Athlete</span>
+                <br />
+                on <span className="text-[#C8FF00]">Your Roster</span>.
               </h2>
               <p className="text-white/60 text-lg mb-4">
                 JABA analyzes every athlete your agency represents, tracking their content, audience, personal brand, and the types of partnerships they naturally align with. Instead of guessing which athletes to pitch to brands, your team can see exactly how each athlete performs and where the strongest brand opportunities exist.
