@@ -871,17 +871,12 @@ export default function Agency2Page() {
             <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
               JABA Acts as the Agency&apos;s <span className="text-[#C8FF00]">Execution Layer.</span>
             </h3>
-            <p className="text-white/60 mb-4">
-              JABA&apos;s AI manages the day-to-day execution of athlete campaigns so your team does not have to chase deliverables, approvals, or timelines.
-            </p>
             <p className="text-white/60 mb-3">
-              JABA monitors every campaign and automatically sends reminders for:
+              JABA manages every campaign deliverable and automatically sends reminders so nothing slips.
             </p>
             <ul className="text-white/60 mb-6 list-disc pl-5 space-y-1">
-              <li>Posting time and scheduled content windows</li>
+              <li>Posting time and content windows</li>
               <li>Incorrect captions or missing collab tags</li>
-              <li>Improper use of brand or school IP</li>
-              <li>Athletes breaking brand exclusivity terms</li>
               <li>Missed deadlines or missing deliverables</li>
               <li>Payment status and contract milestones</li>
             </ul>
@@ -912,15 +907,11 @@ export default function Agency2Page() {
                   Find Brands Already Working <span className="text-[#C8FF00]">With Athletes.</span>
                 </h2>
                 <p className="text-white/60 text-lg mb-5">
-                  JABA&apos;s database of over 300,000 brands shows exactly how companies activate with athletes. See which brands are already running athlete campaigns, understand deal history, and find the right decision makers to contact.
-                </p>
-                <p className="text-white/60 text-lg mb-5">
-                  This focuses on athlete brand deals, not corporate sponsorships.
+                  Search 300,000+ brands actively working with athletes. See deal history, find decision makers, and identify who&apos;s the right fit.
                 </p>
                 <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
                   <li>Discover brands actively working with athletes</li>
-                  <li>See deal history and athlete partnerships</li>
-                  <li>Identify audience overlap between brands and your athletes</li>
+                  <li>See deal history and audience overlap</li>
                   <li>Find verified marketing and partnership contacts</li>
                 </ul>
               </div>
@@ -951,17 +942,12 @@ export default function Agency2Page() {
                 AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
               </h2>
               <p className="text-white/60 text-lg mb-5">
-                Once you identify the right brand, JABA generates the pitch and helps you start the conversation.
-              </p>
-              <p className="text-white/60 text-lg mb-5">
-                Our AI automatically creates media kits, writes outreach messages, and tracks every interaction so your team can focus on closing deals.
+                Once you find the right brand, JABA builds the pitch. AI media kits, outreach emails, and deal tracking - all in one place.
               </p>
 
               <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
                 <li>Generate AI media kits for each athlete</li>
-                <li>Create custom brand pitches in seconds</li>
-                <li>Draft personalized outreach emails</li>
-                <li>Send messages directly to brand decision makers</li>
+                <li>Draft personalized outreach emails in seconds</li>
                 <li>Track follow-ups and deal activity in one pipeline</li>
               </ul>
             </div>
@@ -993,11 +979,8 @@ export default function Agency2Page() {
             <h3 className="text-3xl md:text-4xl font-bold font-bricolage text-white mb-4 leading-tight">
               Centralize Campaign Execution Across <span className="text-[#C8FF00]">Every Athlete.</span>
             </h3>
-            <p className="text-white/60 mb-3">
-              As deal volume grows, agencies need a single system to track campaigns, deliverables, and timelines across their entire roster.
-            </p>
             <p className="text-white/60 mb-6">
-              JABA gives teams real-time visibility into what is live, what is due, and what needs attention so nothing slips through the cracks.
+              One system for every campaign, deliverable, and timeline across your roster. Always know what&apos;s live, what&apos;s due, and what needs attention.
             </p>
           </FadeRight>
           {/* Right: Campaign execution image */}
@@ -1030,14 +1013,12 @@ export default function Agency2Page() {
                 on <span className="text-[#C8FF00]">Your Roster</span>.
               </h2>
               <p className="text-white/60 text-lg mb-4">
-                JABA analyzes every athlete your agency represents, tracking their content, audience, personal brand, and the types of partnerships they naturally align with. Instead of guessing which athletes to pitch to brands, your team can see exactly how each athlete performs and where the strongest brand opportunities exist.
+                JABA builds a full picture of every athlete you represent - their content, audience, brand fit, and where the strongest opportunities exist.
               </p>
               <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
-                <li>Analyze what athletes post and how their audience responds</li>
-                <li>Understand tone, caption style, and content themes</li>
                 <li>See how athletes perform in sponsored content</li>
                 <li>Identify which athletes align best with specific brands</li>
-                <li>Track audience demographics and engagement patterns</li>
+                <li>Track audience demographics and engagement</li>
               </ul>
               <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-sm backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>
@@ -1075,13 +1056,11 @@ export default function Agency2Page() {
                 1M+ Posts <span className="text-[#C8FF00]">Analyzed</span>.
               </h2>
               <p className="text-white/60 text-lg mb-5">
-                Stop guessing what works. JABA analyzes every sponsored and organic post across your roster so you walk into every brand meeting as a content expert — with real data on what formats, hooks, and timing actually drive results for athletes like yours.
+                See what content performs best across your roster. Walk into every brand meeting with real data on what formats, hooks, and timing actually work.
               </p>
               <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
-                <li>Search every athletes post</li>
                 <li>See what formats, hooks, and timing perform best</li>
                 <li>Develop content strategy for prospective recruits</li>
-                <li>Compare sponsored vs organic performance</li>
                 <li>Save hours of manual research every week</li>
               </ul>
               <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-md backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
