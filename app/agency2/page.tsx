@@ -1,1 +1,1 @@
-export { default } from "../agency/page";
+export { default } from "../features3/page";
