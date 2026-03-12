@@ -239,6 +239,89 @@ function SectionBadge({ label }: { label: string }) {
   return <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">{label}</span>;
 }
 
+/* ─── Lifecycle Section Helpers ─── */
+const LIFECYCLE_STAGES = [
+  {
+    topLabel: "PITCH",
+    bottomLabel: "Brand Deals",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.35-4.35" />
+      </svg>
+    ),
+  },
+  {
+    topLabel: "BUILD",
+    bottomLabel: "Campaigns",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    ),
+  },
+  {
+    topLabel: "MANAGE",
+    bottomLabel: "Deliverables",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" />
+        <path d="M9 7h6M9 11h6M9 15h4" />
+      </svg>
+    ),
+  },
+  {
+    topLabel: "TRACK",
+    bottomLabel: "Every Approval",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+  },
+  {
+    topLabel: "SHOWCASE ROI",
+    bottomLabel: "Performance",
+    icon: (
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18" />
+        <path d="m19 9-5 5-4-4-3 3" />
+      </svg>
+    ),
+  },
+];
+
+function LifecycleNode({ topLabel, bottomLabel, icon }: { topLabel: string; bottomLabel: string; icon: ReactNode }) {
+  return (
+    <div className="flex h-[85px] w-full flex-col items-center justify-center gap-1.5 rounded-lg border border-[#C8FF00]/40 bg-white/[0.06] px-1 py-2 shadow-[0_0_30px_rgba(200,255,0,0.12)] backdrop-blur-md transition-all duration-300 hover:border-[#C8FF00]/75 hover:shadow-[0_0_50px_rgba(200,255,0,0.28)] hover:bg-white/[0.09] md:h-[175px] md:w-[185px] md:gap-4 md:rounded-2xl md:px-5 md:py-7">
+      <span className="rounded-lg bg-[#C8FF00]/15 p-1 md:rounded-xl md:p-3 [&_svg]:h-4 [&_svg]:w-4 md:[&_svg]:h-[34px] md:[&_svg]:w-[34px]">{icon}</span>
+      <span className="text-center leading-tight text-white">
+        <span className="block text-[8px] font-bold uppercase tracking-[0.04em] md:text-[18px] md:tracking-[0.12em]">{topLabel}</span>
+        <span className="block text-[7px] font-medium uppercase tracking-[0.02em] text-white/50 md:mt-1 md:text-[13px] md:tracking-[0.06em]">{bottomLabel}</span>
+      </span>
+    </div>
+  );
+}
+
+function LifecycleArrowRight() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-5 w-5 flex-shrink-0 text-[#C8FF00]/90 md:h-7 md:w-7 md:text-[#C8FF00]/60">
+      <path d="M5 12h14" strokeLinecap="round" />
+      <path d="m13 7 6 5-6 5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function LifecycleArrowDown() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-4 w-4 text-[#C8FF00]/85">
+      <path d="M12 5v14" strokeLinecap="round" />
+      <path d="m7 13 5 6 5-6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function TeamPagesCard() {
   const teams = [
     { handle: "@ohiostatefb", sport: "Football", athletes: 85, campaigns: 12, icon: "🏈", accent: "bg-red-500/20 text-red-400" },
@@ -418,12 +501,13 @@ export default function Features4Page() {
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(200,241,53,0.18),transparent_35%),radial-gradient(circle_at_bottom,rgba(45,80,30,0.35),transparent_45%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(168,85,247,0.18),transparent_35%),radial-gradient(circle_at_bottom,rgba(88,28,135,0.35),transparent_45%)]" />
           <StarField />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black z-[2]" />
           <FadeUp delay={100} className="relative z-10">
             <h1 className="mx-auto max-w-5xl font-bricolage text-[1.65rem] font-black uppercase leading-[1.1] text-white sm:text-5xl md:text-7xl">
-              NIL Is Evolving Faster Than the Systems Built to Support It
+              NIL Is Evolving Faster{" "}
+              <span className="text-[#C8FF00]">Than the Systems Built to Support It</span>
             </h1>
           </FadeUp>
           <FadeUp delay={220} className="relative z-10">
@@ -489,7 +573,7 @@ export default function Features4Page() {
         </section>
 
         <section className="relative z-10 bg-black px-6 py-20">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-6xl text-center">
             <FadeUp>
               <SectionBadge label="Operational Reality" />
               <h2 className="font-bricolage text-4xl font-bold leading-tight text-white md:text-5xl">
@@ -507,7 +591,7 @@ export default function Features4Page() {
           className="relative overflow-hidden px-6 py-24 text-center"
           style={{
             backgroundImage:
-              "linear-gradient(180deg, rgba(0,0,0,0.78), rgba(0,0,0,0.88)), radial-gradient(circle at top, rgba(200,241,53,0.16), transparent 38%), url('/header-bg-without-balls.jpg')",
+              "linear-gradient(180deg, rgba(0,0,0,0.78), rgba(0,0,0,0.88)), radial-gradient(circle at top, rgba(168,85,247,0.16), transparent 38%), url('/header-bg-without-balls.jpg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -545,7 +629,7 @@ export default function Features4Page() {
                     >
                       <Image src="/1st-video-thumbnail.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
                       <span className="absolute inset-0 bg-black/15" />
-                      <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="absolute inset-0 flex items-end justify-center pb-[18%]">
                         <span className="h-16 w-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl">▶</span>
                       </span>
                     </button>
@@ -553,67 +637,35 @@ export default function Features4Page() {
                 </div>
               </div>
             </ScaleIn>
-            <FadeUp className="mt-16">
-              <h3 className="font-bricolage text-2xl font-bold text-white md:text-3xl lg:text-5xl">
+            <FadeUp className="mt-20">
+              <h3 className="font-bricolage text-3xl font-black text-white md:text-4xl lg:text-6xl">
                 AI that manages the whole campaign lifecycle.
               </h3>
+              <p className="mx-auto mt-4 max-w-4xl text-lg text-white/50">
+                From first pitch to final report - JABA handles every step so your team doesn&apos;t have to.
+              </p>
             </FadeUp>
-            <FadeUp className="mt-10">
-              <div className="flex justify-center px-0 md:px-4">
-                <div className="flex w-full max-w-4xl items-center gap-0 overflow-x-auto md:overflow-x-visible rounded-2xl border border-zinc-800 bg-zinc-900/80 px-4 py-5 md:px-6">
-                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="m21 21-4.35-4.35" />
-                      </svg>
+            <FadeUp className="mt-12">
+              <div
+                className="mx-auto w-full max-w-6xl md:rounded-[32px] md:border md:border-white/15 md:bg-white/[0.05] md:px-10 md:py-14 lg:px-16 lg:py-16 md:backdrop-blur-2xl"
+                style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15), 0 0 40px rgba(200,255,0,0.12)" }}
+              >
+                {/* Desktop: single row */}
+                <ol className="hidden items-center justify-center gap-3 md:flex">
+                  {LIFECYCLE_STAGES.map((stage, i) => (
+                    <li key={stage.topLabel} className="flex items-center gap-3">
+                      <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} icon={stage.icon} />
+                      {i < LIFECYCLE_STAGES.length - 1 && <LifecycleArrowRight />}
+                    </li>
+                  ))}
+                </ol>
+                {/* Mobile: 3 top + arrow down + 2 bottom */}
+                <div className="flex gap-2 overflow-x-auto pb-2 md:hidden">
+                  {LIFECYCLE_STAGES.map((stage) => (
+                    <div key={stage.topLabel} className="min-w-[90px] flex-1">
+                      <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} icon={stage.icon} />
                     </div>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Pitch</span>
-                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Brand Deals</span>
-                  </div>
-                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
-                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 19V5M5 12l7-7 7 7" />
-                      </svg>
-                    </div>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Build</span>
-                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Campaigns</span>
-                  </div>
-                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
-                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="5" y="2" width="14" height="20" rx="2" />
-                        <path d="M9 7h6M9 11h6M9 15h4" />
-                      </svg>
-                    </div>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Manage</span>
-                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Deliverables</span>
-                  </div>
-                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
-                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M9 11l3 3L22 4" />
-                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                      </svg>
-                    </div>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Track</span>
-                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Every Approval</span>
-                  </div>
-                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
-                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M3 3v18h18" />
-                        <path d="m19 9-5 5-4-4-3 3" />
-                      </svg>
-                    </div>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white whitespace-nowrap">Showcase ROI</span>
-                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Performance</span>
-                  </div>
+                  ))}
                 </div>
               </div>
             </FadeUp>
@@ -727,60 +779,101 @@ export default function Features4Page() {
             <FadeUp className="order-1 lg:order-first">
               <SectionBadge label="Team Pages" />
               <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
-                Connect Every Team Page to Every Athlete.
+                Connect Team Social Accounts in One Dashboard
               </h2>
               <p className="mt-5 text-lg text-white/60">
-                Each sport runs its own team account. JABA links them all to individual athlete profiles so content, campaigns, and NIL activity flow together across your entire program.
+                Each sport runs its own team social accounts. JABA lets you connect one or multiple team pages so you can track their performance, analyze content trends, and understand how athlete collaborations impact engagement.
               </p>
               <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
-                <li>Sync content across team pages and athlete accounts</li>
-                <li>Manage campaigns by sport, roster, or individual</li>
-                <li>See every athlete&apos;s NIL activity from the team-level view</li>
-                <li>Coordinate posting schedules and cross-promotions</li>
-                <li>Track performance across all team pages in one dashboard</li>
+                <li>Connect and monitor all team social accounts in one place</li>
+                <li>Track analytics and performance across every team page</li>
+                <li>Measure the impact of athlete collaborations on team content</li>
+                <li>Identify what types of posts are driving the most engagement</li>
+                <li>Understand which content strategies are working - and which aren&apos;t</li>
               </ul>
             </FadeUp>
             <ScaleIn className="order-2 lg:order-last">
-              <div className="mx-auto w-full max-w-[520px] lg:mx-0">
-                <TeamPagesCard />
+              <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
+                <Image
+                  src="/Untitled design (64).png"
+                  alt="Team Pages dashboard showing connected team social accounts"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                />
               </div>
             </ScaleIn>
           </div>
         </section>
 
-        <section className="relative z-10 overflow-hidden bg-black py-16">
-          <div className="mx-auto max-w-5xl px-6">
-            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <FadeUp className="order-1 lg:order-first">
-                <SectionBadge label="CRM + AI Outreach" />
-                <h2 className="mb-4 font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
-                  AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
-                </h2>
-                <p className="mb-5 text-lg text-white/60">
-                  JABA keeps your deal pipeline organized and moving. It finds the right contact, pulls brand deal history, drafts outreach, logs every interaction, and tells you exactly who to follow up with next.
-                </p>
-                <ul className="mb-6 list-disc space-y-2 pl-5 text-white/65">
-                  <li>Find verified brand and agency contacts</li>
-                  <li>See brand deal history and audience overlap</li>
-                  <li>Generate outreach drafts in seconds</li>
-                  <li>Auto-log activity and set follow-up reminders</li>
-                  <li>Keep every deal moving in one place</li>
-                </ul>
-              </FadeUp>
-              <FadeRight className="order-2 lg:order-last">
-                <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
-                  <Image
-                    src="/CRM.png"
-                    alt="CRM flow: contact discovery, brand deal database, and AI outreach"
-                    width={520}
-                    height={520}
-                    className="h-auto w-full"
-                    unoptimized
-                  />
+        {/* ── BRAND DISCOVERY ── */}
+        <section className="relative z-10 bg-black px-6 py-24">
+          <FadeUp>
+            <div className="mx-auto max-w-5xl px-6">
+              <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+                <div className="order-1 md:order-2">
+                  <SectionBadge label="Brand Discovery" />
+                  <h2 className="mb-4 font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                    Find Brands Already Working <span className="text-[#C8FF00]">With Athletes.</span>
+                  </h2>
+                  <p className="mb-5 text-lg text-white/60">
+                    Search 300,000+ brands actively working with athletes. See deal history, find decision makers, and identify who&apos;s the right fit.
+                  </p>
+                  <ul className="mb-6 list-disc space-y-2 pl-5 text-white/65">
+                    <li>Discover brands actively working with athletes</li>
+                    <li>See deal history and audience overlap</li>
+                    <li>Find verified marketing and partnership contacts</li>
+                  </ul>
                 </div>
-              </FadeRight>
+                <div className="order-2 md:order-1">
+                  <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
+                    <Image
+                      src="/find-brands.png"
+                      alt="Brand discovery view showing athlete brand opportunities"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </FadeUp>
+        </section>
+
+        {/* ── CRM + AI OUTREACH ── */}
+        <section className="relative z-10 bg-black px-6 py-24">
+          <FadeUp>
+            <div className="mx-auto max-w-5xl px-6">
+              <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+                <div className="order-1 md:order-1">
+                  <SectionBadge label="CRM + AI Outreach" />
+                  <h2 className="mb-4 font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                    AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
+                  </h2>
+                  <p className="mb-5 text-lg text-white/60">
+                    Once you find the right brand, JABA builds the pitch. AI media kits, outreach emails, and deal tracking - all in one place.
+                  </p>
+                  <ul className="mb-6 list-disc space-y-2 pl-5 text-white/65">
+                    <li>Generate AI media kits for each athlete</li>
+                    <li>Draft personalized outreach emails in seconds</li>
+                    <li>Track follow-ups and deal activity in one pipeline</li>
+                  </ul>
+                </div>
+                <div className="order-2 md:order-2">
+                  <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
+                    <Image
+                      src="/Untitled design (63).png"
+                      alt="CRM flow: AI media kits, pitch creation, and outreach"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
         </section>
 
         <section className="relative z-10 bg-black px-6 py-24 text-center">
