@@ -241,6 +241,59 @@ function SectionBadge({ label }: { label: string }) {
   return <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">{label}</span>;
 }
 
+function TeamPagesCard() {
+  const teams = [
+    { handle: "@ohiostatefb", sport: "Football", athletes: 85, campaigns: 12, icon: "🏈", accent: "bg-red-500/20 text-red-400" },
+    { handle: "@ohiostatembb", sport: "Men's Basketball", athletes: 15, campaigns: 8, icon: "🏀", accent: "bg-orange-500/20 text-orange-400" },
+    { handle: "@ohiostatewbb", sport: "Women's Basketball", athletes: 14, campaigns: 6, icon: "🏀", accent: "bg-pink-500/20 text-pink-400" },
+  ];
+
+  return (
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+      {/* Header */}
+      <div className="flex items-center gap-2 border-b border-white/10 px-3 py-3 md:gap-3 md:px-5 md:py-3.5">
+        <h3 className="font-bricolage text-xs font-bold uppercase tracking-wider text-white md:text-sm">Team Pages</h3>
+        <span className="rounded-full border border-white/15 px-2 py-0.5 text-[9px] uppercase tracking-widest text-white/50 md:px-3 md:text-[10px]">Connected</span>
+        <span className="ml-auto flex items-center gap-1.5 text-[11px] text-emerald-400 md:text-xs">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          Live
+        </span>
+      </div>
+
+      {/* Team rows */}
+      <div className="divide-y divide-white/5">
+        {teams.map((t) => (
+          <div key={t.handle} className="flex items-center gap-2.5 px-3 py-3.5 md:gap-4 md:px-5 md:py-4">
+            <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm md:h-10 md:w-10 md:rounded-xl md:text-lg ${t.accent}`}>
+              {t.icon}
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-[13px] font-semibold text-white md:text-sm">{t.sport}</p>
+              <p className="text-[11px] text-white/40 md:text-xs">{t.handle}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-[13px] font-bold text-white md:text-sm">{t.athletes}</p>
+              <p className="text-[9px] uppercase tracking-wider text-white/30 md:text-[10px]">athletes</p>
+            </div>
+            <div className="hidden text-right sm:block">
+              <p className="text-sm font-bold text-[#C8F135]">{t.campaigns}</p>
+              <p className="text-[10px] uppercase tracking-wider text-white/30">campaigns</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Summary footer */}
+      <div className="border-t border-white/10 bg-white/[0.02] px-4 py-3.5 md:px-5">
+        <div className="flex items-center justify-between">
+          <span className="text-[11px] text-white/40 md:text-xs">3 team pages connected</span>
+          <span className="text-[11px] font-medium text-white/60 md:text-xs">114 athletes · 26 campaigns</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SpendingTable() {
   const athletes = [
     { name: "Tevin Jones", total: "$165,000", cap: "$120,000", offset: "$45,000", deal: "Burger Deal Q4", amount2: "$25,000" },
@@ -371,7 +424,7 @@ export default function Features4Page() {
           <StarField />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black z-[2]" />
           <FadeUp delay={100} className="relative z-10">
-            <h1 className="mx-auto max-w-5xl font-bebas text-[2.6rem] leading-[0.95] text-[#C8F135] sm:text-5xl md:text-8xl">
+            <h1 className="mx-auto max-w-5xl font-bricolage text-[1.65rem] font-black uppercase leading-[1.1] text-white sm:text-5xl md:text-7xl">
               NIL Is Evolving Faster Than the Systems Built to Support It
             </h1>
           </FadeUp>
@@ -668,6 +721,32 @@ export default function Features4Page() {
                 </div>
               </FadeRight>
             </div>
+          </div>
+        </section>
+
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <FadeUp className="order-1 lg:order-first">
+              <SectionBadge label="Team Pages" />
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                Connect Every Team Page to Every Athlete.
+              </h2>
+              <p className="mt-5 text-lg text-white/60">
+                Each sport runs its own team account. JABA links them all to individual athlete profiles so content, campaigns, and NIL activity flow together across your entire program.
+              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
+                <li>Sync content across team pages and athlete accounts</li>
+                <li>Manage campaigns by sport, roster, or individual</li>
+                <li>See every athlete&apos;s NIL activity from the team-level view</li>
+                <li>Coordinate posting schedules and cross-promotions</li>
+                <li>Track performance across all team pages in one dashboard</li>
+              </ul>
+            </FadeUp>
+            <ScaleIn className="order-2 lg:order-last">
+              <div className="mx-auto w-full max-w-[520px] lg:mx-0">
+                <TeamPagesCard />
+              </div>
+            </ScaleIn>
           </div>
         </section>
 
