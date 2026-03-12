@@ -671,6 +671,86 @@ export default function Features4Page() {
           </div>
         </section>
 
+        <section className="relative z-10 overflow-hidden bg-black py-16">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <FadeUp className="order-1 lg:order-first">
+                <SectionBadge label="CRM + AI Outreach" />
+                <h2 className="mb-4 font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                  AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
+                </h2>
+                <p className="mb-5 text-lg text-white/60">
+                  JABA keeps your deal pipeline organized and moving. It finds the right contact, pulls brand deal history, drafts outreach, logs every interaction, and tells you exactly who to follow up with next.
+                </p>
+                <ul className="mb-6 list-disc space-y-2 pl-5 text-white/65">
+                  <li>Find verified brand and agency contacts</li>
+                  <li>See brand deal history and audience overlap</li>
+                  <li>Generate outreach drafts in seconds</li>
+                  <li>Auto-log activity and set follow-up reminders</li>
+                  <li>Keep every deal moving in one place</li>
+                </ul>
+              </FadeUp>
+              <FadeRight className="order-2 lg:order-last">
+                <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
+                  <Image
+                    src="/CRM.png"
+                    alt="CRM flow: contact discovery, brand deal database, and AI outreach"
+                    width={520}
+                    height={520}
+                    className="h-auto w-full"
+                    unoptimized
+                  />
+                </div>
+              </FadeRight>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative z-10 bg-black px-6 py-24 text-center">
+          <div className="mx-auto max-w-6xl">
+            <FadeUp>
+              <SectionBadge label="Outsmart NIL Go" />
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+                NIL Valuation and Spending Plan
+              </h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg text-white/60">
+                Build compliant third-party NIL deals while tracking spend, offsets, and remaining budget in one system.
+              </p>
+            </FadeUp>
+            <ScaleIn className="mx-auto mt-12 max-w-5xl">
+              <SpendingTable />
+            </ScaleIn>
+            <div className="mx-auto mt-12 grid max-w-5xl gap-8 text-left md:grid-cols-2">
+              <FadeLeft>
+                <div className="rounded-2xl border border-white/10 bg-zinc-900/70 p-7">
+                  <h3 className="font-bricolage text-2xl font-bold text-white">Deal Builder</h3>
+                  <p className="mt-3 text-white/60">
+                    Structure third-party NIL deals with clarity, consistency, and audit-ready documentation.
+                  </p>
+                  <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
+                    <li>Standardized deal structures</li>
+                    <li>Clear compensation breakdowns</li>
+                    <li>Consistent inputs across athletes and brands</li>
+                  </ul>
+                </div>
+              </FadeLeft>
+              <FadeRight>
+                <div className="rounded-2xl border border-white/10 bg-zinc-900/70 p-7">
+                  <h3 className="font-bricolage text-2xl font-bold text-white">NIL Go Valuation</h3>
+                  <p className="mt-3 text-white/60">
+                    Generate compliant, defensible valuations aligned with NIL Go guidelines.
+                  </p>
+                  <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
+                    <li>Transparent valuation logic</li>
+                    <li>Defensible spend recommendations</li>
+                    <li>Confidence for compliance and leadership</li>
+                  </ul>
+                </div>
+              </FadeRight>
+            </div>
+          </div>
+        </section>
+
         <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <FadeLeft>
@@ -731,72 +811,6 @@ export default function Features4Page() {
               </div>
             </FadeRight>
           </div>
-        </section>
-
-        <section className="relative z-10 bg-black px-6 py-24 text-center">
-          <div className="mx-auto max-w-6xl">
-            <FadeUp>
-              <SectionBadge label="Outsmart NIL Go" />
-              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
-                NIL Valuation and Spending Plan
-              </h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg text-white/60">
-                Build compliant third-party NIL deals while tracking spend, offsets, and remaining budget in one system.
-              </p>
-            </FadeUp>
-            <ScaleIn className="mx-auto mt-12 max-w-5xl">
-              <SpendingTable />
-            </ScaleIn>
-            <div className="mx-auto mt-12 grid max-w-5xl gap-8 text-left md:grid-cols-2">
-              <FadeLeft>
-                <div className="rounded-2xl border border-white/10 bg-zinc-900/70 p-7">
-                  <h3 className="font-bricolage text-2xl font-bold text-white">Deal Builder</h3>
-                  <p className="mt-3 text-white/60">
-                    Structure third-party NIL deals with clarity, consistency, and audit-ready documentation.
-                  </p>
-                  <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
-                    <li>Standardized deal structures</li>
-                    <li>Clear compensation breakdowns</li>
-                    <li>Consistent inputs across athletes and brands</li>
-                  </ul>
-                </div>
-              </FadeLeft>
-              <FadeRight>
-                <div className="rounded-2xl border border-white/10 bg-zinc-900/70 p-7">
-                  <h3 className="font-bricolage text-2xl font-bold text-white">NIL Go Valuation</h3>
-                  <p className="mt-3 text-white/60">
-                    Generate compliant, defensible valuations aligned with NIL Go guidelines.
-                  </p>
-                  <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
-                    <li>Transparent valuation logic</li>
-                    <li>Defensible spend recommendations</li>
-                    <li>Confidence for compliance and leadership</li>
-                  </ul>
-                </div>
-              </FadeRight>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative z-10 bg-black px-6 py-24 text-center">
-          <FadeUp>
-            <div className="mx-auto max-w-3xl">
-              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
-                Ready to See JABA in Action?
-              </h2>
-              <p className="mx-auto mt-5 max-w-2xl text-lg text-white/60">
-                Book a demo and see how JABA helps athletic departments manage NIL at scale.
-              </p>
-              <a
-                href="https://calendly.com/jordon-jaba/jaba"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/25 bg-gradient-to-br from-[#c084fc] via-[#7B5CF0] to-[#38bdf8] px-7 py-3 font-semibold text-white transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(123,92,240,0.65),0_0_70px_rgba(56,189,248,0.25)] shadow-[0_0_30px_rgba(123,92,240,0.45),0_0_60px_rgba(56,189,248,0.15)]"
-              >
-                Demo JABA <span className="text-base">↗</span>
-              </a>
-            </div>
-          </FadeUp>
         </section>
 
         <footer className="relative overflow-hidden border-t border-white/10 bg-black px-6 pb-10 pt-20">
