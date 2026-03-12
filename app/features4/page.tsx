@@ -16,6 +16,7 @@ const LOGOS: LogoItem[] = [
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png", alt: "Virginia" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png", alt: "ASU" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png", alt: "Baylor" },
+  { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/301.png", alt: "San Diego" },
   { src: "/school-logos/Big3.png", alt: "BIG3" },
   { src: "/school-logos/AU.png", alt: "Athletes Unlimited" },
 ];
