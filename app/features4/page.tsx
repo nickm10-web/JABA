@@ -242,47 +242,91 @@ function SectionBadge({ label }: { label: string }) {
 }
 
 function SpendingTable() {
-  const rows = [
-    ["Total Budget", "$20,595,000"],
-    ["Salary Cap", "$20,500,000"],
-    ["Offset", "$95,000"],
-    ["Total Deals", "5"],
+  const athletes = [
+    { name: "Tevin Jones", total: "$165,000", cap: "$120,000", offset: "$45,000", deal: "Burger Deal Q4", amount2: "$25,000" },
+    { name: "Marcus Webb", total: "$115,000", cap: "$85,000", offset: "$30,000", deal: "Nike Endorsement", amount2: "$20,000" },
+    { name: "Jordan Ellis", total: "$95,000", cap: "$70,000", offset: "$25,000", deal: "Vuori Campaign", amount2: "$15,000" },
   ];
 
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-      <div className="border-b border-white/10 px-5 py-4">
-        <p className="text-sm font-semibold text-white">NIL spending dashboard screenshot</p>
-        <p className="text-xs text-white/40">Compliant planning, spend tracking, and valuation visibility</p>
-      </div>
-      <div className="grid gap-px bg-white/10 md:grid-cols-4">
-        {rows.map(([label, value]) => (
-          <div key={label} className="bg-zinc-900 px-5 py-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-white/45">{label}</p>
-            <p className="mt-3 text-2xl font-semibold text-white">{value}</p>
+      {/* Header bar */}
+      <div className="flex flex-wrap items-center gap-3 border-b border-white/10 px-5 py-3.5">
+        <h3 className="font-bricolage text-sm font-bold uppercase tracking-wider text-white">Spending Plans</h3>
+        <span className="rounded-full border border-white/15 px-3 py-0.5 text-[10px] uppercase tracking-widest text-white/50">Commodities Tracker</span>
+        <span className="ml-1 flex h-4 w-4 items-center justify-center rounded-full border border-white/20 text-[9px] text-white/40">i</span>
+        <div className="ml-auto hidden items-center gap-2 md:flex">
+          <div className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/60">
+            <span className="text-white/30">📅</span>
+            <span>11/14/2025</span>
+            <span className="text-white/30">to</span>
+            <span>11/14/2026</span>
           </div>
-        ))}
+          <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70">
+            Yearly <span className="ml-1 text-white/30">▾</span>
+          </div>
+        </div>
       </div>
+
+      {/* Stat cards */}
+      <div className="grid grid-cols-2 gap-px bg-white/5 md:grid-cols-4">
+        <div className="px-5 py-5" style={{ background: "#18181b" }}>
+          <div className="mb-2 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded bg-emerald-500/20 text-[10px] text-emerald-400">$</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/40">Total Budget</span>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-white">$20,595,000</p>
+          <p className="mt-0.5 text-[10px] text-white/30">Cap + Offset</p>
+        </div>
+        <div className="px-5 py-5" style={{ background: "#18181b" }}>
+          <div className="mb-2 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded bg-yellow-500/20 text-[10px] text-yellow-400">$</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/40">Salary Cap</span>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-yellow-400">$20,500,000</p>
+          <p className="mt-0.5 text-[10px] text-white/30">Max: $20.5M</p>
+        </div>
+        <div className="px-5 py-5" style={{ background: "#18181b" }}>
+          <div className="mb-2 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-500/20 text-[10px] text-blue-300">+</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/40">Offset</span>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-blue-300">$95,000</p>
+          <p className="mt-0.5 text-[10px] text-white/30">From deals</p>
+        </div>
+        <div className="px-5 py-5" style={{ background: "#18181b" }}>
+          <div className="mb-2 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded bg-pink-500/20 text-[10px] text-pink-400">⊞</span>
+            <span className="text-[10px] uppercase tracking-widest text-white/40">Total Deals</span>
+          </div>
+          <p className="text-lg md:text-2xl font-bold text-white">5</p>
+          <p className="mt-0.5 text-[10px] text-white/30">Active deals</p>
+        </div>
+      </div>
+
+      {/* Table */}
       <div className="p-5">
-        <div className="rounded-xl border border-white/10 bg-black/30 p-4">
-          <div className="mb-3 grid grid-cols-[1.4fr_1fr_1fr] gap-3 text-[11px] uppercase tracking-[0.18em] text-white/40">
-            <span>Athlete</span>
-            <span>Brand</span>
-            <span>Status</span>
+        <div className="overflow-x-auto rounded-xl border border-white/8 bg-black/30">
+          {/* Table header */}
+          <div className="grid grid-cols-[1.5fr_1fr_1fr_1fr_1.3fr_1fr] gap-2 border-b border-white/8 px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-white/40">
+            <span className="flex items-center gap-1">Athlete Name <span className="ml-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white/10 text-[8px] text-white/50">+</span></span>
+            <span>Total Amount</span>
+            <span>Salary Cap</span>
+            <span>Offset</span>
+            <span className="flex items-center gap-1">Deal 1 <span className="ml-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-red-500/30 text-[8px] text-red-400">−</span></span>
+            <span>Amount 2</span>
           </div>
-          <div className="space-y-3">
-            {[
-              ["Tevin Jones", "Nike", "Approved"],
-              ["Marcus Webb", "Vuori", "Pending"],
-              ["Jordan Ellis", "Alo", "Submitted"],
-            ].map(([athlete, brand, status]) => (
-              <div key={athlete} className="grid grid-cols-[1.4fr_1fr_1fr] gap-3 rounded-lg border border-white/8 bg-white/[0.03] px-3 py-3 text-sm">
-                <span className="text-white/80">{athlete}</span>
-                <span className="text-white/60">{brand}</span>
-                <span className="text-[#C8F135]">{status}</span>
-              </div>
-            ))}
-          </div>
+          {/* Table rows */}
+          {athletes.map((a) => (
+            <div key={a.name} className="grid grid-cols-[1.5fr_1fr_1fr_1fr_1.3fr_1fr] gap-2 border-b border-white/5 px-4 py-3.5 text-sm last:border-b-0">
+              <span className="text-white/80">{a.name}</span>
+              <span className="text-white/60">{a.total}</span>
+              <span className="text-white/60">{a.cap}</span>
+              <span className="text-white/60">{a.offset}</span>
+              <span className="text-white/60">{a.deal}</span>
+              <span className="text-white/60">{a.amount2}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -327,7 +371,7 @@ export default function Features4Page() {
           <StarField />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black z-[2]" />
           <FadeUp delay={100} className="relative z-10">
-            <h1 className="mx-auto max-w-5xl font-bebas text-6xl leading-[0.95] text-[#C8F135] md:text-8xl">
+            <h1 className="mx-auto max-w-5xl font-bebas text-[2.6rem] leading-[0.95] text-[#C8F135] sm:text-5xl md:text-8xl">
               NIL Is Evolving Faster Than the Systems Built to Support It
             </h1>
           </FadeUp>
@@ -421,10 +465,10 @@ export default function Features4Page() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
           <div className="mx-auto max-w-6xl">
             <FadeUp>
-              <h2 className="font-bricolage text-5xl font-black text-[#C8F135] md:text-7xl">
+              <h2 className="font-bricolage text-3xl font-black text-[#C8F135] md:text-5xl lg:text-7xl">
                 We Built AI to Fix This.
               </h2>
-              <p className="mt-4 font-bricolage text-3xl font-bold text-white md:text-5xl">Meet JABA.</p>
+              <p className="mt-4 font-bricolage text-2xl font-bold text-white md:text-3xl lg:text-5xl">Meet JABA.</p>
             </FadeUp>
             <ScaleIn className="mx-auto mt-14 max-w-5xl">
               <div
@@ -459,65 +503,65 @@ export default function Features4Page() {
               </div>
             </ScaleIn>
             <FadeUp className="mt-16">
-              <h3 className="font-bricolage text-3xl font-bold text-white md:text-5xl">
+              <h3 className="font-bricolage text-2xl font-bold text-white md:text-3xl lg:text-5xl">
                 AI that manages the whole campaign lifecycle.
               </h3>
             </FadeUp>
             <FadeUp className="mt-10">
-              <div className="flex justify-center px-4">
-                <div className="flex w-full max-w-4xl items-center gap-0 rounded-2xl border border-zinc-800 bg-zinc-900/80 px-6 py-5">
-                  <div className="flex flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
+              <div className="flex justify-center px-0 md:px-4">
+                <div className="flex w-full max-w-4xl items-center gap-0 overflow-x-auto md:overflow-x-visible rounded-2xl border border-zinc-800 bg-zinc-900/80 px-4 py-5 md:px-6">
+                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
+                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="11" cy="11" r="8" />
                         <path d="m21 21-4.35-4.35" />
                       </svg>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-white">Pitch</span>
-                    <span className="mt-0.5 text-xs uppercase tracking-widest text-zinc-500">Brand Deals</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Pitch</span>
+                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Brand Deals</span>
                   </div>
-                  <span className="mx-2 text-lg text-zinc-600">→</span>
-                  <div className="flex flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
+                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
+                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
+                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M12 19V5M5 12l7-7 7 7" />
                       </svg>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-white">Build</span>
-                    <span className="mt-0.5 text-xs uppercase tracking-widest text-zinc-500">Campaigns</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Build</span>
+                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Campaigns</span>
                   </div>
-                  <span className="mx-2 text-lg text-zinc-600">→</span>
-                  <div className="flex flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
+                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
+                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
+                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="5" y="2" width="14" height="20" rx="2" />
                         <path d="M9 7h6M9 11h6M9 15h4" />
                       </svg>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-white">Manage</span>
-                    <span className="mt-0.5 text-xs uppercase tracking-widest text-zinc-500">Deliverables</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Manage</span>
+                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Deliverables</span>
                   </div>
-                  <span className="mx-2 text-lg text-zinc-600">→</span>
-                  <div className="flex flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
+                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
+                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
+                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M9 11l3 3L22 4" />
                         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                       </svg>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-white">Track</span>
-                    <span className="mt-0.5 text-xs uppercase tracking-widest text-zinc-500">Every Approval</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">Track</span>
+                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Every Approval</span>
                   </div>
-                  <span className="mx-2 text-lg text-zinc-600">→</span>
-                  <div className="flex flex-1 flex-col items-center">
-                    <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
+                  <span className="mx-1 md:mx-2 text-lg text-zinc-600 shrink-0">→</span>
+                  <div className="flex min-w-[80px] md:min-w-0 flex-1 flex-col items-center">
+                    <div className="mb-3 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-xl border border-[#C8F135]/30 bg-zinc-800">
                       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8F135" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M3 3v18h18" />
                         <path d="m19 9-5 5-4-4-3 3" />
                       </svg>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-white">Showcase ROI</span>
-                    <span className="mt-0.5 text-xs uppercase tracking-widest text-zinc-500">Performance</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white whitespace-nowrap">Showcase ROI</span>
+                    <span className="mt-0.5 text-[10px] md:text-xs uppercase tracking-widest text-zinc-500">Performance</span>
                   </div>
                 </div>
               </div>
@@ -525,9 +569,9 @@ export default function Features4Page() {
           </div>
         </section>
 
-        <section className="relative z-10 bg-black px-6 py-20">
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <FadeLeft>
+            <FadeLeft className="order-2 lg:order-first">
               <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/jaba-text-assistant-v2.png"
@@ -538,7 +582,7 @@ export default function Features4Page() {
                 />
               </div>
             </FadeLeft>
-            <FadeRight>
+            <FadeUp className="order-1 lg:order-last">
               <SectionBadge label="AI Workflow" />
               <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
                 JABA Acts as the Athlete&apos;s Assistant So You Don&apos;t Have To
@@ -549,11 +593,11 @@ export default function Features4Page() {
               <p className="mt-4 text-lg text-white/60">
                 JABA stays on top of deliverables, deadlines, approvals, follow ups, missed posts, and issues as they happen so nothing slips through the cracks.
               </p>
-            </FadeRight>
+            </FadeUp>
           </div>
         </section>
 
-        <section className="relative z-10 bg-black px-6 py-20">
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <FadeLeft>
               <SectionBadge label="Campaign Execution" />
@@ -583,7 +627,7 @@ export default function Features4Page() {
           </div>
         </section>
 
-        <section className="relative z-10 py-16 bg-black">
+        <section className="relative z-10 overflow-hidden py-16 bg-black">
           <div className="max-w-5xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <FadeLeft className="order-2 lg:order-first">
@@ -627,7 +671,7 @@ export default function Features4Page() {
           </div>
         </section>
 
-        <section className="relative z-10 bg-black px-6 py-20">
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <FadeLeft>
               <SectionBadge label="Built for the Athlete Economy" />
@@ -693,7 +737,7 @@ export default function Features4Page() {
           <div className="mx-auto max-w-6xl">
             <FadeUp>
               <SectionBadge label="Outsmart NIL Go" />
-              <h2 className="font-bricolage text-4xl font-bold leading-tight text-white md:text-5xl">
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
                 NIL Valuation and Spending Plan
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg text-white/60">
@@ -734,6 +778,27 @@ export default function Features4Page() {
           </div>
         </section>
 
+        <section className="relative z-10 bg-black px-6 py-24 text-center">
+          <FadeUp>
+            <div className="mx-auto max-w-3xl">
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+                Ready to See JABA in Action?
+              </h2>
+              <p className="mx-auto mt-5 max-w-2xl text-lg text-white/60">
+                Book a demo and see how JABA helps athletic departments manage NIL at scale.
+              </p>
+              <a
+                href="https://calendly.com/jordon-jaba/jaba"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/25 bg-gradient-to-br from-[#c084fc] via-[#7B5CF0] to-[#38bdf8] px-7 py-3 font-semibold text-white transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(123,92,240,0.65),0_0_70px_rgba(56,189,248,0.25)] shadow-[0_0_30px_rgba(123,92,240,0.45),0_0_60px_rgba(56,189,248,0.15)]"
+              >
+                Demo JABA <span className="text-base">↗</span>
+              </a>
+            </div>
+          </FadeUp>
+        </section>
+
         <footer className="relative overflow-hidden border-t border-white/10 bg-black px-6 pb-10 pt-20">
           <div className="relative z-10 mx-auto max-w-5xl">
             <div className="mb-10 flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
@@ -758,7 +823,7 @@ export default function Features4Page() {
               </div>
             </div>
             <div className="mb-4 h-px bg-white/10" />
-            <p className="text-xs text-white/40">© All right reserved</p>
+            <p className="text-xs text-white/40">© All rights reserved</p>
           </div>
         </footer>
       </main>
