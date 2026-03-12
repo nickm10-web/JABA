@@ -6,8 +6,6 @@ import Image from "next/image";
 type LogoItem = { src?: string; alt: string; label?: string; color?: string };
 
 const LOGOS: LogoItem[] = [
-  { src: "/school-logos/ohio-state.png", alt: "Ohio State" },
-  { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png", alt: "Alabama" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/2.png", alt: "Auburn" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png", alt: "Georgia" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png", alt: "Purdue" },
@@ -16,7 +14,6 @@ const LOGOS: LogoItem[] = [
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png", alt: "Missouri" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png", alt: "Arkansas" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png", alt: "Virginia" },
-  { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png", alt: "Arizona" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/9.png", alt: "ASU" },
   { src: "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png", alt: "Baylor" },
   { src: "/school-logos/Big3.png", alt: "BIG3" },
