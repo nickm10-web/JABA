@@ -530,7 +530,7 @@ export default function Features4Page() {
                   {showMainVideo ? (
                     <iframe
                       className="absolute inset-0 h-full w-full"
-                      src="https://www.youtube.com/embed/tkxrYJrkaPA?rel=0&autoplay=1"
+                      src="https://www.youtube.com/embed/7OFmhlnP03o?rel=0&autoplay=1"
                       title="JABA demo video"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -543,7 +543,7 @@ export default function Features4Page() {
                       className="absolute inset-0"
                       onClick={() => setShowMainVideo(true)}
                     >
-                      <Image src="/DAMAR%20HAMLIN%20%282%29.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
+                      <Image src="/1st-video-thumbnail.png" alt="Meet JABA video thumbnail" fill className="object-cover" priority />
                       <span className="absolute inset-0 bg-black/15" />
                       <span className="absolute inset-0 flex items-center justify-center">
                         <span className="h-16 w-16 rounded-full bg-white/90 text-black flex items-center justify-center text-xl">▶</span>
