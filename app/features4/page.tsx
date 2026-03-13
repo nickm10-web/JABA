@@ -294,11 +294,11 @@ const LIFECYCLE_STAGES = [
 
 function LifecycleNode({ topLabel, bottomLabel, icon }: { topLabel: string; bottomLabel: string; icon: ReactNode }) {
   return (
-    <div className="flex h-[85px] w-full flex-col items-center justify-center gap-1.5 rounded-lg border border-[#C8FF00]/40 bg-white/[0.06] px-1 py-2 shadow-[0_0_30px_rgba(200,255,0,0.12)] backdrop-blur-md transition-all duration-300 hover:border-[#C8FF00]/75 hover:shadow-[0_0_50px_rgba(200,255,0,0.28)] hover:bg-white/[0.09] md:h-[175px] md:w-[185px] md:gap-4 md:rounded-2xl md:px-5 md:py-7">
-      <span className="rounded-lg bg-[#C8FF00]/15 p-1 md:rounded-xl md:p-3 [&_svg]:h-4 [&_svg]:w-4 md:[&_svg]:h-[34px] md:[&_svg]:w-[34px]">{icon}</span>
+    <div className="flex h-[140px] w-full flex-col items-center justify-center gap-3 rounded-2xl border border-[#C8FF00]/40 bg-white/[0.06] px-4 py-6 shadow-[0_0_30px_rgba(200,255,0,0.12)] backdrop-blur-md transition-all duration-300 hover:border-[#C8FF00]/75 hover:shadow-[0_0_50px_rgba(200,255,0,0.28)] hover:bg-white/[0.09] md:h-[170px] md:gap-4 md:px-5 md:py-7 lg:w-[175px]">
+      <span className="rounded-xl bg-[#C8FF00]/15 p-3 [&_svg]:h-7 [&_svg]:w-7 md:[&_svg]:h-[34px] md:[&_svg]:w-[34px]">{icon}</span>
       <span className="text-center leading-tight text-white">
-        <span className="block text-[8px] font-bold uppercase tracking-[0.04em] md:text-[18px] md:tracking-[0.12em]">{topLabel}</span>
-        <span className="block text-[7px] font-medium uppercase tracking-[0.02em] text-white/50 md:mt-1 md:text-[13px] md:tracking-[0.06em]">{bottomLabel}</span>
+        <span className="block text-sm font-bold uppercase tracking-[0.08em] md:text-[18px] md:tracking-[0.12em]">{topLabel}</span>
+        <span className="block mt-1 text-xs font-medium uppercase tracking-[0.04em] text-white/50 md:text-[13px] md:tracking-[0.06em]">{bottomLabel}</span>
       </span>
     </div>
   );
@@ -306,7 +306,7 @@ function LifecycleNode({ topLabel, bottomLabel, icon }: { topLabel: string; bott
 
 function LifecycleArrowRight() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-5 w-5 flex-shrink-0 text-[#C8FF00]/90 md:h-7 md:w-7 md:text-[#C8FF00]/60">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-6 w-6 flex-shrink-0 text-[#C8FF00]/70 md:h-7 md:w-7">
       <path d="M5 12h14" strokeLinecap="round" />
       <path d="m13 7 6 5-6 5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -315,7 +315,7 @@ function LifecycleArrowRight() {
 
 function LifecycleArrowDown() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-4 w-4 text-[#C8FF00]/85">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-6 w-6 text-[#C8FF00]/70">
       <path d="M12 5v14" strokeLinecap="round" />
       <path d="m7 13 5 6 5-6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -647,11 +647,11 @@ export default function Features4Page() {
             </FadeUp>
             <FadeUp className="mt-12">
               <div
-                className="mx-auto w-full max-w-6xl md:rounded-[32px] md:border md:border-white/15 md:bg-white/[0.05] md:px-10 md:py-14 lg:px-16 lg:py-16 md:backdrop-blur-2xl"
+                className="mx-auto w-full max-w-6xl rounded-[24px] border border-white/15 bg-white/[0.05] px-6 py-10 backdrop-blur-2xl md:rounded-[32px] md:px-10 md:py-14 lg:px-16 lg:py-16"
                 style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15), 0 0 40px rgba(200,255,0,0.12)" }}
               >
-                {/* Desktop: single row */}
-                <ol className="hidden items-center justify-center gap-3 md:flex">
+                {/* Desktop (lg+): single row */}
+                <ol className="hidden items-center justify-center gap-3 lg:flex">
                   {LIFECYCLE_STAGES.map((stage, i) => (
                     <li key={stage.topLabel} className="flex items-center gap-3">
                       <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} icon={stage.icon} />
@@ -659,23 +659,70 @@ export default function Features4Page() {
                     </li>
                   ))}
                 </ol>
-                {/* Mobile: 3 top + arrow down + 2 bottom */}
-                <div className="flex gap-2 overflow-x-auto pb-2 md:hidden">
-                  {LIFECYCLE_STAGES.map((stage) => (
-                    <div key={stage.topLabel} className="min-w-[90px] flex-1">
-                      <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} icon={stage.icon} />
-                    </div>
-                  ))}
+                {/* Tablet (md): 3 top row + arrow + 2 bottom row */}
+                <div className="hidden md:flex md:flex-col md:items-center md:gap-5 lg:hidden">
+                  <div className="flex items-center justify-center gap-4">
+                    {LIFECYCLE_STAGES.slice(0, 3).map((stage, i) => (
+                      <div key={stage.topLabel} className="flex items-center gap-4">
+                        <div className="w-[180px]">
+                          <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} icon={stage.icon} />
+                        </div>
+                        {i < 2 && <LifecycleArrowRight />}
+                      </div>
+                    ))}
+                  </div>
+                  <LifecycleArrowDown />
+                  <div className="flex items-center justify-center gap-4">
+                    {LIFECYCLE_STAGES.slice(3).map((stage, i) => (
+                      <div key={stage.topLabel} className="flex items-center gap-4">
+                        <div className="w-[180px]">
+                          <LifecycleNode topLabel={stage.topLabel} bottomLabel={stage.bottomLabel} icon={stage.icon} />
+                        </div>
+                        {i < 1 && <LifecycleArrowRight />}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Mobile: 2-column grid with arrows showing flow */}
+                <div className="md:hidden">
+                  {/* Row 1 */}
+                  <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+                    <LifecycleNode topLabel={LIFECYCLE_STAGES[0].topLabel} bottomLabel={LIFECYCLE_STAGES[0].bottomLabel} icon={LIFECYCLE_STAGES[0].icon} />
+                    <LifecycleArrowRight />
+                    <LifecycleNode topLabel={LIFECYCLE_STAGES[1].topLabel} bottomLabel={LIFECYCLE_STAGES[1].bottomLabel} icon={LIFECYCLE_STAGES[1].icon} />
+                  </div>
+                  {/* Arrow down (right-aligned under card 2) */}
+                  <div className="flex justify-end pr-[22%] py-2">
+                    <LifecycleArrowDown />
+                  </div>
+                  {/* Row 2 (reversed: arrow points left) */}
+                  <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+                    <LifecycleNode topLabel={LIFECYCLE_STAGES[3].topLabel} bottomLabel={LIFECYCLE_STAGES[3].bottomLabel} icon={LIFECYCLE_STAGES[3].icon} />
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="h-6 w-6 flex-shrink-0 text-[#C8FF00]/70 rotate-180">
+                      <path d="M5 12h14" strokeLinecap="round" />
+                      <path d="m13 7 6 5-6 5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <LifecycleNode topLabel={LIFECYCLE_STAGES[2].topLabel} bottomLabel={LIFECYCLE_STAGES[2].bottomLabel} icon={LIFECYCLE_STAGES[2].icon} />
+                  </div>
+                  {/* Arrow down (left-aligned under card 4) */}
+                  <div className="flex justify-start pl-[22%] py-2">
+                    <LifecycleArrowDown />
+                  </div>
+                  {/* Row 3: centered last card */}
+                  <div className="mx-auto w-[48%]">
+                    <LifecycleNode topLabel={LIFECYCLE_STAGES[4].topLabel} bottomLabel={LIFECYCLE_STAGES[4].bottomLabel} icon={LIFECYCLE_STAGES[4].icon} />
+                  </div>
                 </div>
               </div>
             </FadeUp>
           </div>
         </section>
 
+        {/* 1. AI Workflow — image LEFT, text RIGHT */}
         <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <FadeLeft className="order-2 lg:order-first">
-              <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/jaba-text-assistant-v2.png"
                   alt="JABA text assistant helping manage NIL deliverables and campaign execution"
@@ -685,7 +732,7 @@ export default function Features4Page() {
                 />
               </div>
             </FadeLeft>
-            <FadeUp className="order-1 lg:order-last">
+            <FadeRight className="order-1 lg:order-last">
               <SectionBadge label="AI Workflow" />
               <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
                 JABA Acts as the Athlete&apos;s Assistant So You Don&apos;t Have To
@@ -696,87 +743,76 @@ export default function Features4Page() {
               <p className="mt-4 text-lg text-white/60">
                 JABA stays on top of deliverables, deadlines, approvals, follow ups, missed posts, and issues as they happen so nothing slips through the cracks.
               </p>
-            </FadeUp>
+            </FadeRight>
           </div>
         </section>
 
+        {/* 2. Brand Discovery — text LEFT, image RIGHT */}
         <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <FadeLeft>
-              <SectionBadge label="Campaign Execution" />
+            <FadeLeft className="order-2 lg:order-first">
+              <SectionBadge label="Brand Discovery" />
               <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
-                Centralize Campaign Execution Across Every Athlete
+                Find Brands Already Working <span className="text-[#C8FF00]">With Athletes.</span>
               </h2>
               <p className="mt-5 text-lg text-white/60">
-                As deal volume grows, athletic departments need a single system to track campaigns, deliverables, and timelines across their entire roster.
+                Search 300,000+ brands actively working with athletes. See deal history, find decision makers, and identify who&apos;s the right fit.
               </p>
-              <p className="mt-4 text-lg text-white/60">
-                JABA gives teams real-time visibility into what is live, what is due, and what needs attention so nothing slips through the cracks.
-              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
+                <li>Discover brands actively working with athletes</li>
+                <li>See deal history and audience overlap</li>
+                <li>Find verified marketing and partnership contacts</li>
+              </ul>
             </FadeLeft>
-            <FadeRight>
-              <div className="relative w-full max-w-[520px] mx-auto md:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <FadeRight className="order-1 lg:order-last">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
-                  src="/campaignautomation.png"
-                  alt="JABA campaign automation dashboard managing multiple athlete campaigns"
+                  src="/find-brands.png"
+                  alt="Brand discovery view showing athlete brand opportunities"
                   fill
-                  unoptimized
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 520px"
                 />
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
             </FadeRight>
           </div>
         </section>
 
-        <section className="relative z-10 overflow-hidden py-16 bg-black">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <FadeLeft className="order-2 lg:order-first">
-                <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  <Image
-                    src="/content-intelligence-v3.png"
-                    alt="JABA content intelligence hub analyzing athlete social media posts"
-                    fill
-                    unoptimized
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 520px"
-                  />
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                </div>
-              </FadeLeft>
-
-              <FadeRight className="order-1 lg:order-last">
-                <span className="inline-block text-xs text-white/70 border border-white/20 rounded-full px-3 py-1 mb-4">Content Intelligence</span>
-                <h2 className="font-bricolage text-3xl md:text-4xl font-bold leading-tight text-white mb-4">
-                  1M+ Posts Analyzed.
-                </h2>
-                <p className="text-white/60 text-lg mb-5">
-                  See what your athletes&apos; content is delivering and why. Explore posts across sports, brands, and platforms to understand what&apos;s driving engagement and how your program is showing up in NIL content.
-                </p>
-                <ul className="list-disc pl-5 text-white/65 space-y-2 mb-6">
-                  <li>Search every athlete post across your roster</li>
-                  <li>Track brand visibility and logo placement in posts</li>
-                  <li>Analyze hooks, pacing, and caption style</li>
-                  <li>Compare sponsored vs organic content performance</li>
-                  <li>Discover NIL trends across your entire program</li>
-                </ul>
-                <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-md backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>
-                    <circle cx="11" cy="11" r="7" />
-                    <path d="m20 20-3.5-3.5" strokeLinecap="round" />
-                  </svg>
-                  <span className="text-white/50 font-normal tracking-wide">&quot;What NIL content is performing best in my program?&quot;</span>
-                </div>
-              </FadeRight>
-            </div>
+        {/* 3. CRM + AI Outreach — image LEFT, text RIGHT */}
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <FadeLeft className="order-2 lg:order-first">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/Untitled design (63).png"
+                  alt="CRM flow: AI media kits, pitch creation, and outreach"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                />
+              </div>
+            </FadeLeft>
+            <FadeRight className="order-1 lg:order-last">
+              <SectionBadge label="CRM + AI Outreach" />
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
+              </h2>
+              <p className="mt-5 text-lg text-white/60">
+                Once you find the right brand, JABA builds the pitch. AI media kits, outreach emails, and deal tracking - all in one place.
+              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
+                <li>Generate AI media kits for each athlete</li>
+                <li>Draft personalized outreach emails in seconds</li>
+                <li>Track follow-ups and deal activity in one pipeline</li>
+              </ul>
+            </FadeRight>
           </div>
         </section>
 
+        {/* 4. Team Pages — text LEFT, image RIGHT */}
         <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <FadeUp className="order-1 lg:order-first">
+            <FadeLeft className="order-2 lg:order-first">
               <SectionBadge label="Team Pages" />
               <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
                 Connect Team Social Accounts in One Dashboard
@@ -791,89 +827,92 @@ export default function Features4Page() {
                 <li>Identify what types of posts are driving the most engagement</li>
                 <li>Understand which content strategies are working - and which aren&apos;t</li>
               </ul>
-            </FadeUp>
-            <ScaleIn className="order-2 lg:order-last">
-              <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
+            </FadeLeft>
+            <FadeRight className="order-1 lg:order-last">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
-                  src="/Untitled design (64).png"
+                  src="/Untitled design (65).png"
                   alt="Team Pages dashboard showing connected team social accounts"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 520px"
                 />
               </div>
-            </ScaleIn>
+            </FadeRight>
           </div>
         </section>
 
-        {/* ── BRAND DISCOVERY ── */}
-        <section className="relative z-10 bg-black px-6 py-24">
-          <FadeUp>
-            <div className="mx-auto max-w-5xl px-6">
-              <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-                <div className="order-1 md:order-2">
-                  <SectionBadge label="Brand Discovery" />
-                  <h2 className="mb-4 font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
-                    Find Brands Already Working <span className="text-[#C8FF00]">With Athletes.</span>
-                  </h2>
-                  <p className="mb-5 text-lg text-white/60">
-                    Search 300,000+ brands actively working with athletes. See deal history, find decision makers, and identify who&apos;s the right fit.
-                  </p>
-                  <ul className="mb-6 list-disc space-y-2 pl-5 text-white/65">
-                    <li>Discover brands actively working with athletes</li>
-                    <li>See deal history and audience overlap</li>
-                    <li>Find verified marketing and partnership contacts</li>
-                  </ul>
-                </div>
-                <div className="order-2 md:order-1">
-                  <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
-                    <Image
-                      src="/find-brands.png"
-                      alt="Brand discovery view showing athlete brand opportunities"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 520px"
-                    />
-                  </div>
-                </div>
+        {/* 5. Campaign Execution — image LEFT, text RIGHT */}
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <FadeLeft className="order-2 lg:order-first">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/campaignautomation.png"
+                  alt="JABA campaign automation dashboard managing multiple athlete campaigns"
+                  fill
+                  unoptimized
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
-            </div>
-          </FadeUp>
+            </FadeLeft>
+            <FadeRight className="order-1 lg:order-last">
+              <SectionBadge label="Campaign Execution" />
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                Centralize Campaign Execution Across Every Athlete
+              </h2>
+              <p className="mt-5 text-lg text-white/60">
+                As deal volume grows, athletic departments need a single system to track campaigns, deliverables, and timelines across their entire roster.
+              </p>
+              <p className="mt-4 text-lg text-white/60">
+                JABA gives teams real-time visibility into what is live, what is due, and what needs attention so nothing slips through the cracks.
+              </p>
+            </FadeRight>
+          </div>
         </section>
 
-        {/* ── CRM + AI OUTREACH ── */}
-        <section className="relative z-10 bg-black px-6 py-24">
-          <FadeUp>
-            <div className="mx-auto max-w-5xl px-6">
-              <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-                <div className="order-1 md:order-1">
-                  <SectionBadge label="CRM + AI Outreach" />
-                  <h2 className="mb-4 font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
-                    AI Relationship Management <span className="text-[#C8FF00]">&amp; Pitch Creation.</span>
-                  </h2>
-                  <p className="mb-5 text-lg text-white/60">
-                    Once you find the right brand, JABA builds the pitch. AI media kits, outreach emails, and deal tracking - all in one place.
-                  </p>
-                  <ul className="mb-6 list-disc space-y-2 pl-5 text-white/65">
-                    <li>Generate AI media kits for each athlete</li>
-                    <li>Draft personalized outreach emails in seconds</li>
-                    <li>Track follow-ups and deal activity in one pipeline</li>
-                  </ul>
-                </div>
-                <div className="order-2 md:order-2">
-                  <div className="relative mx-auto aspect-square w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] lg:mx-0">
-                    <Image
-                      src="/Untitled design (63).png"
-                      alt="CRM flow: AI media kits, pitch creation, and outreach"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 520px"
-                    />
-                  </div>
-                </div>
+        {/* 6. Content Intelligence — text LEFT, image RIGHT */}
+        <section className="relative z-10 overflow-hidden bg-black px-6 py-20">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <FadeLeft className="order-2 lg:order-first">
+              <SectionBadge label="Content Intelligence" />
+              <h2 className="font-bricolage text-3xl font-bold leading-tight text-white md:text-4xl">
+                1M+ Posts Analyzed.
+              </h2>
+              <p className="mt-5 text-lg text-white/60">
+                See what your athletes&apos; content is delivering and why. Explore posts across sports, brands, and platforms to understand what&apos;s driving engagement and how your program is showing up in NIL content.
+              </p>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-white/65">
+                <li>Search every athlete post across your roster</li>
+                <li>Track brand visibility and logo placement in posts</li>
+                <li>Analyze hooks, pacing, and caption style</li>
+                <li>Compare sponsored vs organic content performance</li>
+                <li>Discover NIL trends across your entire program</li>
+              </ul>
+              <div className="mt-6 flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-5 py-3 text-sm max-w-md backdrop-blur-sm hover:border-[#C8FF00]/40 hover:bg-white/[0.09] transition-all duration-300 cursor-default">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-[14px] w-[14px] text-white/30" aria-hidden>
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+                </svg>
+                <span className="text-white/50 font-normal tracking-wide">&quot;What NIL content is performing best in my program?&quot;</span>
               </div>
-            </div>
-          </FadeUp>
+            </FadeLeft>
+            <FadeRight className="order-1 lg:order-last">
+              <div className="relative w-full max-w-[520px] mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/content-intelligence-v3.png"
+                  alt="JABA content intelligence hub analyzing athlete social media posts"
+                  fill
+                  unoptimized
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                />
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              </div>
+            </FadeRight>
+          </div>
         </section>
 
         <section className="relative z-10 bg-black px-6 py-24 text-center">
